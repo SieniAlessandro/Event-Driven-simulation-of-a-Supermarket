@@ -14,10 +14,14 @@
 // 
 
 package carrefour.simulations;
+import carrefour.*;
 
 //
 // TODO auto-generated type
 //
 network Carrefour
 {
+    submodules:
+        	casse[30]: Cassa;
+        	
 }
