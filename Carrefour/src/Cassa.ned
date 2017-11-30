@@ -20,4 +20,8 @@ package carrefour;
 //
 simple Cassa
 {
+    //parameters
+    gates:
+        input in;
+        output out;
 }
