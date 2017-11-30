@@ -31,6 +31,6 @@ network Carrefour
    connections :    
        for i = 0..numerocassse {
        		casse[i].in <-- decisore.out;
-       		coda.out --> decsiore.in;
+       		coda.out --> decisore.in;
        }
 }
