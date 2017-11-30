@@ -16,3 +16,4 @@ public:
 };
 
 #endif /* DECISORE_H_ */
+//decisore di elena
