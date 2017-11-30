@@ -1,26 +1,23 @@
-/*
- * Decisore.h
- *
- *  Created on: 30 nov 2017
- *      Author: elena
- */
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+// 
 
-#ifndef DECISORE_H_
-#define DECISORE_H_
-using namespace omnetpp;
+package carrefour;
 
-//int numerocasse = 5; useremo un parametro di configurazione
-
-class Decisore {
-private:
-   int* clientiAllaCassa;
-public:
-    Decisore();
-    virtual void invia(cMessage persona);
-    virtual void ricevi(cMessage persona);
-    virtual ~Decisore();
-};
-
-#endif /* DECISORE_H_ */
-//decisore di elena
-
+//
+// TODO auto-generated module
+//
+simple Decisore
+{
+}
