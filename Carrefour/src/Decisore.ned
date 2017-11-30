@@ -20,4 +20,7 @@ package carrefour;
 //
 simple Decisore
 {
+    gates:
+        input in;
+        output out;
 }
