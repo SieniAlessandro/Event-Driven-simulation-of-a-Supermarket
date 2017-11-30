@@ -27,9 +27,10 @@ network Carrefour
     submodules:
         	casse[numerocasse]	: Cassa;
         	coda 				: Coda;
+        	decisore			: Decisore;
    connections :    
        for i = 0..numerocassse {
-       		casse[i].in <-- coda.out;
-       		casse[i].out --> coda.in;
+       		casse[i].in <-- decisore.out;
+       		coda.out --> decsiore.in;
        }
 }
