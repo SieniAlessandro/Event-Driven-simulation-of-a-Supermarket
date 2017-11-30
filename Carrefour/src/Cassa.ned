@@ -20,7 +20,12 @@ package carrefour;
 //
 simple Cassa
 {
+<<<<<<< HEAD
     gates : 
+=======
+    //parameters
+    gates:
+>>>>>>> 5e01b225b40a5031e62cc6ec53c2c8b1bea8c7fc
         input in;
         output out;
 }
