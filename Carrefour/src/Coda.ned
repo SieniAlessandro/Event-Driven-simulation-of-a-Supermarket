@@ -20,4 +20,7 @@ package carrefour;
 //
 simple Coda
 {
+    gates : 
+        input in;
+        output out;
 }

@@ -21,7 +21,12 @@ import carrefour.*;
 //
 network Carrefour
 {
+    gates : 
+        input in[];
+        output out[];
+    connections :    
     submodules:
-        	casse[30]: Cassa;
+        	casse[30]	: Cassa;
+        	coda 		: Coda;
         	
 }
