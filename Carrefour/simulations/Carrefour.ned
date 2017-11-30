@@ -21,12 +21,15 @@ import carrefour.*;
 //
 network Carrefour
 {
-    gates : 
-        input in[];
-        output out[];
-    connections :    
+    parameters:
+        int numerocasse = 30;
+        
     submodules:
-        	casse[30]	: Cassa;
-        	coda 		: Coda;
-        	
+        	casse[numerocasse]	: Cassa;
+        	coda 				: Coda;
+   connections :    
+       for i = 0..numerocassse {
+       		casse[i].in <-- coda.out;
+       		casse[i].out --> coda.in;
+       }
 }

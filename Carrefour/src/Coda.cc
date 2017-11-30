@@ -19,10 +19,9 @@ Define_Module(Coda);
 
 void Coda::initialize()
 {
-    // Funzione che va all'inzio
 }
 
 void Coda::handleMessage(cMessage *msg)
 {
-    // TODO - Generated method body
+
 }
