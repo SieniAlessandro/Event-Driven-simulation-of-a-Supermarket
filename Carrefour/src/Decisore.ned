@@ -1,5 +1,8 @@
 /*
  * Decisore.h
+ *
+ *  Created on: 30 nov 2017
+ *      Author: elena
  */
 
 #ifndef DECISORE_H_
@@ -20,3 +23,4 @@ public:
 
 #endif /* DECISORE_H_ */
 //decisore di elena
+

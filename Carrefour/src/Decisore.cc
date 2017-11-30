@@ -15,4 +15,3 @@ Decisore::Decisore() {
 Decisore::~Decisore() {
     // TODO Auto-generated destructor stub
 }
-
