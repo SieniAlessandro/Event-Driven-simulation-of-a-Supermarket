@@ -19,7 +19,8 @@ Define_Module(Cassa);
 
 void Cassa::initialize()
 {
-    // TODO - Generated method body
+    //Obtaing the reference to the module Decisore,to use its own methods
+    this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
 }
 
 void Cassa::handleMessage(cMessage *msg)

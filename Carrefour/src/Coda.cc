@@ -19,6 +19,8 @@ Define_Module(Coda);
 
 void Coda::initialize()
 {
+    //Obtaing the reference to the module Decisore,to use its own methods
+    this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
 }
 
 void Coda::handleMessage(cMessage *msg) {

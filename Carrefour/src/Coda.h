@@ -25,7 +25,9 @@ using namespace omnetpp;
  */
 class Coda : public cSimpleModule
 {
-  protected:
+    //The reference of our decisore that we use to choose the right tie
+    Decisore *decisore;
+protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 };

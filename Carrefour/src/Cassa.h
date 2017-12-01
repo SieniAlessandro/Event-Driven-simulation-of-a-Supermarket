@@ -25,7 +25,10 @@ using namespace omnetpp;
  */
 class Cassa : public cSimpleModule
 {
-  protected:
+private:
+    //The reference of our decisore that we use to choose the right tie
+    Decisore *decisore;
+ protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 };

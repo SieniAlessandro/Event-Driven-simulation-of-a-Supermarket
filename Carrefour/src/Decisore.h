@@ -11,10 +11,12 @@ using namespace omnetpp;
 class Decisore {
 private:
    int* clientiAllaCassa;
+   int numerocasse;
+   int findlowest(int);
 public:
     Decisore();
-    virtual void invia(cMessage persona);
-    virtual void ricevi(cMessage persona);
+    virtual int invia();
+    virtual int ricevi();
     virtual ~Decisore();
 };
 

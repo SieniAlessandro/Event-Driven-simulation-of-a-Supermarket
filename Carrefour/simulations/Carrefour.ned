@@ -23,14 +23,21 @@ network Carrefour
 {
     parameters:
         int numerocasse = 30;
-        
+
+        @display("bgb=747,274");
     submodules:
-        	casse[numerocasse]	: Cassa;
-        	coda 				: Coda;
-        	decisore			: Decisore;
-   connections :    
-       for i = 0..numerocassse {
-       		casse[i].in <-- decisore.out;
-       		coda.out --> decisore.in;
-       }
+        casse[numerocasse]: Cassa {
+            @display("p=555,69");
+        }
+        coda: Coda {
+            @display("p=43,69");
+        }
+        decisore: Decisore {
+            @display("p=43,203");
+        }
+    connections:
+        for i=0..numerocassse {
+            casse[i].in <-- coda.out;
+            coda.out --> casse[i].in;
+        }
 }
