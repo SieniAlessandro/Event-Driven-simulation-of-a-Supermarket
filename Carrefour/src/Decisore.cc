@@ -83,9 +83,9 @@ int Decisore::newCustomer(int parameter){
     //Retrieving the minimum delay
     double delay = getParentModule().par("delay");
     //Computing the delay by multiplying the delay with the index incremented by one (because the first till is in
-    //position 0
+    //position 0)
     double waiting_time = delay*(position+1);
-    //This function must simulate the time occurs to the customer to reach the right till once he know when he know to go
+    //This function must simulate the time occurs to the customer to reach the right till once he knew when he must to go
     wait(waiting_time);
     //Incrementing by one the number in queue at this till because now the customer is arrived
     this->clientiAllaCassa[position]++;
