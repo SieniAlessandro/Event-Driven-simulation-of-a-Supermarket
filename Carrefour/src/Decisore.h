@@ -15,8 +15,8 @@ private:
    int findlowest(int);
 public:
     Decisore();
-    virtual int invia();
-    virtual int ricevi();
+    int newCustomer(int i);
+    void ServiceComplete(int i);
     virtual ~Decisore();
 };
 
