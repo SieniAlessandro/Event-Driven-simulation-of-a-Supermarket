@@ -10,7 +10,7 @@
 Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the
-    //network itself, and with the help of the method par(), i get the requestd parameter
+    //network itself, and with the help of the method par(), i get the requested parameter
     this->numerocasse = getParentModule().par("numerocasse");
     //I generate an array of integer with a length equal to the number of ties, because in position
     //is contained the number of person in queue who are waiting to be served at the i-tie
@@ -22,7 +22,7 @@ Decisore::Decisore() {
   }
 
 Decisore::~Decisore() {
-    //Dealocating the array of ties
+    //Deallocating the array of ties
     delete[] this->clientiAllaCassa;
 }
 //This function is used to find what tie has ties has the minimum number of people who are waiting
@@ -60,7 +60,7 @@ int Decisore::findlowest(int parametro){
                     indice = (i < indice) ? i : indice;
             }
             else{
-                //I set the nex index and the new minimum values
+                //I set the next index and the new minimum values
                 indice = i;
                 minore = this->clientiAllaCassa[i];
             }
