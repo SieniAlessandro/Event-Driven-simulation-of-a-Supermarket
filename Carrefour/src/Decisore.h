@@ -6,8 +6,6 @@
 #define DECISORE_H_
 using namespace omnetpp;
 
-//int numerocasse = 5; useremo un parametro di configurazione
-
 class Decisore {
 private:
    int* clientiAllaCassa;
@@ -20,5 +18,6 @@ public:
     virtual ~Decisore();
 };
 
-#endif /* DECISORE_H_ */
-//decisore di elena
+#endif
+
+/* DECISORE_H_ */
