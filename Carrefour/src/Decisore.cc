@@ -60,11 +60,8 @@ int Decisore::findlowest(int parametro){
                     indice = (i < indice) ? i : indice;
             }
             else{
-<<<<<<< HEAD
                 //The algorithm set the next index and the new minimum values
-=======
                 //I set the next index and the new minimum values
->>>>>>> 037d50c5f30e42c305673e11e4700104ddbd7477
                 indice = i;
                 minore = this->clientiAllaCassa[i];
             }
