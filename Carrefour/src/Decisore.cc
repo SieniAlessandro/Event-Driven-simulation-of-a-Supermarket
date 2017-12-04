@@ -44,6 +44,8 @@ int Decisore::findlowest(int parametro){
             //position is returned to the caller
             if(this->clientiAllaCassa[i] == 0)
                 return i;
+        //Returning -2 if there aren't any free tills
+        return -2;
     }
     //Parametro = 1 -> We want to operate with tills who have each own queue
     else if(parametro == 1){
@@ -80,15 +82,7 @@ int Decisore::findlowest(int parametro){
 int Decisore::newCustomer(int parameter){
     //Finding the right till
     int position = this->findlowest(parameter);
-    //Retrieving the minimum delay
-    double delay = getParentModule().par("delay");
-    //Computing the delay by multiplying the delay with the index incremented by one (because the first till is in
-    //position 0)
-    //double waiting_time = delay*(position+1);
-    //This function must simulate the time occurs to the customer to reach the right till once he knew when he must to go
-    //wait(waiting_time);
-    //Incrementing by one the number in queue at this till because now the customer is arrived
-    //this->clientiAllaCassa[position]++;
+    this->clientiAllaCassa[i]++;
     return position;
 }
 //This method is used by the till to indicate that it has finished to service one customer, and in particular is usefull
@@ -104,21 +98,13 @@ bool Decisore::ServiceComplete(int i){
         this->clientiAllaCassa[i]--;
         //The decisore check if are customer waiting a service,and if are present, they are assigned to the till
         //This is necessary to maintain the status of work-conserving for the system.
-        if(this->clientiAllaCassa[i] > 0){
+        if(this->inAttesa > 0){
+            //From that point the new customer starts to go to the assigned till
+            this->inAttesa--;
+            //Finally the customer is arrived to the till!!!
+            this->clientiAllaCassa[i]++;
+            //Dire alla coda di inviare un pacchetto
             return true;
-        }else{
-            if(this->inAttesa > 0){
-                //From that point the new customer starts to go to the assigned till
-                this->inAttesa--;
-                //The customer is walking..
-                wait(getParentModule().par("delay") * (i+1));
-                //Finally the customer is arrived to the till!!!
-                this->clientiAllaCassa[i]++;
-                return true;
-            }
-            else
-                return false;
-        }
     }
 }
 
