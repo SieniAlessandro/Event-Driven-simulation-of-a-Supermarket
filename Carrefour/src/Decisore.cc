@@ -36,8 +36,8 @@ Decisore::~Decisore() {
 
 int Decisore::findlowest(int parametro){
 
-    //Paramtro = 0 -> We want to operate with tills without each own single queue
-    if(parametro == 0) {
+    //Parametro = 0 -> We want to operate with tills without each own single queue
+    if(parametro == 0) {//Instead of parametro use configuration parameter
     //I scroll all the tills
         for(int i = 0; i < this->numerocasse;i++)
             //I'm stop when the first free till is reached, because we want the nearest till, and after that
@@ -89,7 +89,7 @@ int Decisore::newCustomer(int parameter){
 //in case of a common queue, because the till are work-conserving, i.e. the must serve all customers in queue without going
 //in idle. This function is called by a till when it has served a customer and if there are other customers in queue it assign
 //the fist of them immediately to the "till" who has called this method.
-bool Decisore::ServiceComplete(int i){
+void Decisore::ServiceComplete(int i){
     //I'm getting the Module of the caller scrolling the hierarchy starting from the parent of all this modules (the network)
     //and searching the submodule with the index passed to the method
     if(i < 0 || i >= this->numerocasse)
@@ -104,8 +104,6 @@ bool Decisore::ServiceComplete(int i){
             //Finally the customer is arrived to the till!!!
             //Dire alla coda di inviare un pacchetto
             //this->clientiAllaCassa[i]++;
-
-            return true;
     }
 }
 

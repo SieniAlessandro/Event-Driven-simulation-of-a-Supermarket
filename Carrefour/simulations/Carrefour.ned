@@ -23,7 +23,7 @@ network Carrefour
 {
     parameters:
         int numerocasse = 30;
-		double delay = 10.0; //Minimun delay for reach the nearest till, the delay grows linerly in proprtion 
+        double delay = 10.0; //Minimun delay for reach the nearest till, the delay grows linerly in proprtion 
 							//to the distance (in our simulation the distance is rappresented by the position
 							//of a specific till in the array)
         @display("bgb=747,274");
@@ -32,10 +32,10 @@ network Carrefour
             @display("p=555,69");
         }
         coda: Coda {
-            @display("p=43,69");
+            @display("p=92,69");
         }
         decisore: Decisore {
-            @display("p=43,203");
+            @display("p=328,185");
         }
     connections:
         for i=0..numerocassse {

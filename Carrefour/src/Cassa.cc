@@ -21,10 +21,19 @@ void Cassa::initialize()
 {
     //Obtaining the reference to the module Decisore,to use its own methods
     this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
-    this->isWorking = false;
+    numeroCassa = numeroCasse++;
 }
 
 void Cassa::handleMessage(cMessage *msg)
 {
-    // TODO - Generated method body
+    //Service complete
+    if(msg->isSelfMessage()){
+        //Inform Decisore
+
+        decisore->ServiceComplete(this->numeroCassa);
+    }else{
+        //Buffering the client
+        customers.push_back(msg);
+    }
+
 }
