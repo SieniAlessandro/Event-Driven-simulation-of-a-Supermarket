@@ -23,7 +23,7 @@ void Coda::handleMessage(cMessage *msg) {
         //get the index of the till
         int indice = decisore->newCustomer();
         if(indice >= 0) {
-            send(customers(0), gates[indice].getFullName());
+            send(customers[0], gates[indice]->getFullName());
             customers.erase(customers.begin());
         }
 

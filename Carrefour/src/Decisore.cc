@@ -80,7 +80,7 @@ int Decisore::findlowest(int parametro){
 //is added to the queue
 //Input parameter : parameter(int) - Is used to define which case we are simulating
 //Output          : int            - In this implementation the function return the position of the till
-int Decisore::newCustomer(int parameter = 0){
+int Decisore::newCustomer(int parameter){
 
     //Finding the right till
     int position = this->findlowest(parameter);
