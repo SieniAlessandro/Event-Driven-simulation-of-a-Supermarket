@@ -4,9 +4,11 @@
 
 #ifndef DECISORE_H_
 #define DECISORE_H_
+#include <omnetpp.h>
+
 using namespace omnetpp;
 
-class Decisore {
+class Decisore: cSimpleModule {
 private:
    //This array is used to indicate the number of customer for each single queue :
    //-In case of common queue the only possible variable are 0 (idle) or 1(serving one customer, working)
@@ -24,7 +26,7 @@ private:
 public:
     Decisore();
     int newCustomer(int i);
-    bool ServiceComplete(int i);
+    void ServiceComplete(int i);
     virtual ~Decisore();
 };
 

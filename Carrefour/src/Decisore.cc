@@ -11,14 +11,14 @@ Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the
     //network itself, and with the help of the method par(), i get the requested parameter
-    this->numerocasse = getParentModule().par("numerocasse");
+    this->numerocasse = par("numerocasse");
     //I generate an array of integer with a length equal to the number of ties, because in position
     //is contained the number of person in queue who are waiting to be served at the i-tie
-    clientiallacassa = new int[numerocasse];
+    this->clientiAllaCassa = new int[numerocasse];
     //At the beginning i set to 0 all the element of the array with the function memset. In this
     //function the third parameter is computed by the number of element of the array times tbe size
     //of a single element(in byte)
-    memset(clientiallacassa,0,sizeof(int)*numerocasse);
+    memset(this->clientiAllaCassa,0,sizeof(int)*numerocasse);
   }
 
 Decisore::~Decisore() {
@@ -52,9 +52,10 @@ int Decisore::findlowest(int parametro){
         //I'm applying the common algorithm to find the minimum value in the array, with the difference that
         //I want to store the relative index, because in the event of a tie I'll choose the smaller index
         int indice = 0;
-        int minore = this->clientiallacassa[0];
+        int minore = this->clientiAllaCassa[0];
         //I scroll all the tills
-        for(int i = 1; i < this->numerocasse;i++){
+        int i;
+        for(i = 1; i < this->numerocasse;i++){
             //I check if the actual value is lower or equal to the actual minimum
             if(this->clientiAllaCassa[i] <= minore){
                 if(this->clientiAllaCassa[i] == minore)
@@ -82,7 +83,7 @@ int Decisore::findlowest(int parametro){
 int Decisore::newCustomer(int parameter){
     //Finding the right till
     int position = this->findlowest(parameter);
-    this->clientiAllaCassa[i]++;
+    this->clientiAllaCassa[position]++;
     return position;
 }
 //This method is used by the till to indicate that it has finished to service one customer, and in particular is usefull
@@ -104,6 +105,7 @@ void Decisore::ServiceComplete(int i){
             //Finally the customer is arrived to the till!!!
             //Dire alla coda di inviare un pacchetto
             //this->clientiAllaCassa[i]++;
+        }
     }
 }
 
