@@ -86,8 +86,32 @@ int Decisore::newCustomer(int parameter){
     //position 0)
     double waiting_time = delay*(position+1);
     //This function must simulate the time occurs to the customer to reach the right till once he knew when he must to go
-    wait(waiting_time);
+    //wait(waiting_time);
     //Incrementing by one the number in queue at this till because now the customer is arrived
-    this->clientiAllaCassa[position]++;
+    //this->clientiAllaCassa[position]++;
     return position;
 }
+//This method is used by the till to indicate that it has finished to service one customer, and in particular is usefull
+//in case of a common queue, because the till are work-conserving, i.e. the must serve all customers in queue without going
+//in idle. This function is called by a till when it has served a customer and if there are other customers in queue it assign
+//the fist of them immediately to the "till" who has called this method.
+void Decisore::ServiceComplete(int i){
+    //I'm getting the Module of the caller scrolling the hierarchy starting from the parent of all this modules (the network)
+    //and searching the submodule with the index passed to the method
+    if(i < 0 || i >= this->numerocasse)
+        EV << "The index passed is not correct" << endl;
+    else{
+        this->clientiAllaCassa[i]--;
+        //The decisore check if are customer waiting a service,and if are present, they are assigned to the till
+        //This is necessary to maintain the status of work-conserving for the system.
+        if(this->inAttesa > 0){
+            //From that point the new customer starts to go to the assigned till
+            this->inAttesa--;
+            //The customer is walking..
+            wait(getParentModule().par("delay") * (i+1));
+            //Finally the customer is arrived to the till!!!
+            this->clientiAllaCassa[i]++;
+        }
+    }
+}
+
