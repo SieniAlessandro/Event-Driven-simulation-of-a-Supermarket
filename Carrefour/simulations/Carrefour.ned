@@ -34,12 +34,9 @@ network Carrefour
         coda: Coda {
             @display("p=92,69");
         }
-        decisore: Decisore {
-            @display("p=328,185");
-        }
     connections:
-        for i=0..numerocassse {
-            casse[i].in <-- coda.out;
-            coda.out --> casse[i].in;
+        for i=0..numerocasse {
+            //casse[i].in <-- coda.out;
+            coda.out++ --> casse[i].in;
         }
 }

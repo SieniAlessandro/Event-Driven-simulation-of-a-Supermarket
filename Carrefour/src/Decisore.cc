@@ -6,7 +6,7 @@
  */
 
 #include "Decisore.h"
-Register_Class();
+Define_Module(Decisore)
 Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the
@@ -80,7 +80,7 @@ int Decisore::findlowest(int parametro){
 //is added to the queue
 //Input parameter : parameter(int) - Is used to define which case we are simulating
 //Output          : int            - In this implementation the function return the position of the till
-int Decisore::newCustomer(int parameter){
+int Decisore::newCustomer(int parameter = 0){
     //Finding the right till
     int position = this->findlowest(parameter);
     this->clientiAllaCassa[position]++;

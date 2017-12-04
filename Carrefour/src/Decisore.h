@@ -8,7 +8,7 @@
 
 using namespace omnetpp;
 
-class Decisore: cSimpleModule {
+class Decisore: public cSimpleModule {
 private:
    //This array is used to indicate the number of customer for each single queue :
    //-In case of common queue the only possible variable are 0 (idle) or 1(serving one customer, working)
@@ -29,6 +29,8 @@ public:
     int newCustomer(int i);
     void ServiceComplete(int i);
     virtual ~Decisore();
+protected:
+
 };
 
 #endif
