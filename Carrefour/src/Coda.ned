@@ -21,6 +21,6 @@ package carrefour;
 simple Coda
 {
     gates : 
-        input in;
+        input in[30];
         output out[30];
 }

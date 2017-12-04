@@ -38,5 +38,6 @@ network Carrefour
         for i=0..numerocasse-1 {
             //casse[i].in <-- coda.out;
             coda.out[i] --> casse[i].in;
+            casse[i].out --> coda.in[i];
         }
 }
