@@ -4,7 +4,7 @@ Define_Module(Coda);
 
 void Coda::initialize()
 {
-    gates = new cGate[par("numeroCasse")];
+    gates = new cGate*[atoi(par("numeroCasse"))];
     for(int i = 0; i<gateSize("out"); i++) {
         gates[i] = gate("out", i);
     }
@@ -20,16 +20,12 @@ void Coda::handleMessage(cMessage *msg) {
         customers.push_back(new cMessage("Cliente"));
     }
     if(customers.size() > 0) {
-        //Send
-
-
-    //get the index of the till
-    int indice = decisore->newCustomer();
-    if(indice >= 0) {
-        send(customers(0), gates[indice].getFullName());
-        customers.erase(customers.begin());
-    }
-
+        //get the index of the till
+        int indice = decisore->newCustomer();
+        if(indice >= 0) {
+            send(customers(0), gates[indice].getFullName());
+            customers.erase(customers.begin());
+        }
 
     }
 

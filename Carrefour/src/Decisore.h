@@ -26,7 +26,7 @@ private:
    int findlowest(int);
 public:
     Decisore();
-    int newCustomer(int i);
+    int newCustomer(int parameter = 0);
     void ServiceComplete(int i);
     virtual ~Decisore();
 protected:

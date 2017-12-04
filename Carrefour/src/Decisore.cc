@@ -81,6 +81,7 @@ int Decisore::findlowest(int parametro){
 //Input parameter : parameter(int) - Is used to define which case we are simulating
 //Output          : int            - In this implementation the function return the position of the till
 int Decisore::newCustomer(int parameter = 0){
+
     //Finding the right till
     int position = this->findlowest(parameter);
     this->clientiAllaCassa[position]++;

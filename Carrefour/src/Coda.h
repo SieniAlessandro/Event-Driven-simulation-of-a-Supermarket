@@ -26,7 +26,7 @@ class Coda : public cSimpleModule
     std::vector<cMessage*> customers;
     //The reference of our decisore that we use to choose the right tie
     Decisore *decisore;
-    cGate* gates;
+    cGate** gates;
 protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
