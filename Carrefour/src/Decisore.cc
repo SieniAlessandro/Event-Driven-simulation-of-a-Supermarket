@@ -101,7 +101,6 @@ bool Decisore::ServiceComplete(int i){
         if(this->inAttesa > 0){
             //From that point the new customer starts to go to the assigned till
             this->inAttesa--;
-            //Finally the customer is arrived to the till!!!
             this->clientiAllaCassa[i]++;
             //Dire alla coda di inviare un pacchetto
             return true;
