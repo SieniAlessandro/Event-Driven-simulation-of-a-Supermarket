@@ -24,7 +24,7 @@ private:
 public:
     Decisore();
     int newCustomer(int i);
-    void ServiceComplete(int i);
+    bool ServiceComplete(int i);
     virtual ~Decisore();
 };
 
