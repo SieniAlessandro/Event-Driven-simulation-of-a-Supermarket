@@ -11,7 +11,7 @@ class Cassa : public cSimpleModule
 private:
     //Used to put an identifier to all the Cassa
     static int numeroCasse;
-    //Used to use always a different seed for every message, becouse they are IID
+    //Inserted to use always a different seed for every message, becouse they are IID
     static int seed;
     //The identifier of the Cassa
     int numeroCassa;
