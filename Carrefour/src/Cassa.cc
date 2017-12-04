@@ -22,6 +22,7 @@ void Cassa::initialize()
     //Obtaining the reference to the module Decisore,to use its own methods
     this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
     numeroCassa = numeroCasse++;
+    isWorking = false;
 }
 
 void Cassa::handleMessage(cMessage *msg)
@@ -29,11 +30,15 @@ void Cassa::handleMessage(cMessage *msg)
     //Service complete
     if(msg->isSelfMessage()){
         //Inform Decisore
-
+        customers.erase(customers.begin());
         decisore->ServiceComplete(this->numeroCassa);
+        isWorking = false;
     }else{
         //Buffering the client
         customers.push_back(msg);
     }
-
+    if(customers.size() > 0 && !isWorking){
+        scheduleAt(omnetpp::exponential(getRNG(seed++), 1/atoi(par("mu"))), customers[0]);
+        isWorking = true;
+    }
 }

@@ -17,7 +17,7 @@
 #define __CARREFOUR_CODA_H_
 
 #include <omnetpp.h>
-
+#include "Decisore.h"
 using namespace omnetpp;
 
 /**
