@@ -18,6 +18,8 @@
 Define_Module(Cassa);
 void Cassa::initialize()
 {
+    numeroCassa = 0;
+    seed = 1;
     //Obtaining the reference to the module Decisore,to use its own methods
     this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
     numeroCassa = numeroCasse++;

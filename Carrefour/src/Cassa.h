@@ -24,11 +24,9 @@ private:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
     //Method used to know if this till are actually working, and used by the module "Cassa".
- public:
-    Cassa(){
-        numeroCasse = 0;
-        seed = 1;
-    }
 };
+
+int Cassa::numeroCasse;
+int Cassa::seed;
 
 #endif
