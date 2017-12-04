@@ -35,8 +35,8 @@ network Carrefour
             @display("p=92,69");
         }
     connections:
-        for i=0..numerocasse {
+        for i=0..numerocasse-1 {
             //casse[i].in <-- coda.out;
-            coda.out++ --> casse[i].in;
+            coda.out[i] --> casse[i].in;
         }
 }

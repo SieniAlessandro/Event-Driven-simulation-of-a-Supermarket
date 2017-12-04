@@ -22,5 +22,5 @@ simple Coda
 {
     gates : 
         input in;
-        output out[];
+        output out[30];
 }

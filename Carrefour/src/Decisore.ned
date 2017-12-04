@@ -22,5 +22,5 @@ simple Decisore
 {
     gates:
         input in;
-        output out[];
+        output out;
 }
