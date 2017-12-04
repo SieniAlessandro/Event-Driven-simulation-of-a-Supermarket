@@ -16,7 +16,6 @@
 #include "Cassa.h"
 
 Define_Module(Cassa);
-
 void Cassa::initialize()
 {
     //Obtaining the reference to the module Decisore,to use its own methods
