@@ -9,7 +9,7 @@ void Coda::initialize()
 }
 
 void Coda::handleMessage(cMessage *msg) {
-    QueueMessage* message = check_and_cast<QueueMessage*>(msg);
+/*    QueueMessage* message = check_and_cast<QueueMessage*>(msg);
         if (message->getOperationType() == NEW_CUSTOMER) {
             queue.insert(message);
         } else if (message->getOperationType() == CASSA_LIBERA) {
@@ -19,6 +19,6 @@ void Coda::handleMessage(cMessage *msg) {
             } else {
                 //Rimuovere dalla coda il primo entrato e mandarlo alla cassa
             }
-        }
+        }*/
 }
 

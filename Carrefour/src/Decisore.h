@@ -4,9 +4,11 @@
 
 #ifndef DECISORE_H_
 #define DECISORE_H_
+#include <omnetpp.h>
+
 using namespace omnetpp;
 
-class Decisore {
+class Decisore: cSimpleModule {
 private:
    //This array is used to indicate the number of customer for each single queue :
    //-In case of common queue the only possible variable are 0 (idle) or 1(serving one customer, working)
@@ -16,14 +18,19 @@ private:
    //This attribute indicates the number of tills present in our system
    int numerocasse;
    //This Attribute is used when there is a common queue and indicates the number of customers that are waiting to be
+<<<<<<< HEAD
    //served
+=======
+   //served, and it is set to 5000 (it's important to mantein the status of infinite memory that the maximum number of
+   //customer "generated" is lower than the dimension of the array plus then numeber of tills.
+>>>>>>> 26436111d4a2e3bc4ccbb9a548c43ca10908d0bc
    int inAttesa;
    //Private Method used to find the till with the less number of customer in queue
    int findlowest(int);
 public:
     Decisore();
     int newCustomer(int i);
-    bool ServiceComplete(int i);
+    void ServiceComplete(int i);
     virtual ~Decisore();
 };
 

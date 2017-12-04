@@ -11,14 +11,14 @@ Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the
     //network itself, and with the help of the method par(), i get the requested parameter
-    this->numerocasse = getParentModule().par("numerocasse");
+    this->numerocasse = par("numerocasse");
     //I generate an array of integer with a length equal to the number of ties, because in position
     //is contained the number of person in queue who are waiting to be served at the i-tie
-    clientiallacassa = new int[numerocasse];
+    this->clientiAllaCassa = new int[numerocasse];
     //At the beginning i set to 0 all the element of the array with the function memset. In this
     //function the third parameter is computed by the number of element of the array times tbe size
     //of a single element(in byte)
-    memset(clientiallacassa,0,sizeof(int)*numerocasse);
+    memset(this->clientiAllaCassa,0,sizeof(int)*numerocasse);
   }
 
 Decisore::~Decisore() {
@@ -36,8 +36,8 @@ Decisore::~Decisore() {
 
 int Decisore::findlowest(int parametro){
 
-    //Paramtro = 0 -> We want to operate with tills without each own single queue
-    if(parametro == 0) {
+    //Parametro = 0 -> We want to operate with tills without each own single queue
+    if(parametro == 0) {//Instead of parametro use configuration parameter
     //I scroll all the tills
         for(int i = 0; i < this->numerocasse;i++)
             //I'm stop when the first free till is reached, because we want the nearest till, and after that
@@ -52,9 +52,10 @@ int Decisore::findlowest(int parametro){
         //I'm applying the common algorithm to find the minimum value in the array, with the difference that
         //I want to store the relative index, because in the event of a tie I'll choose the smaller index
         int indice = 0;
-        int minore = this->clientiallacassa[0];
+        int minore = this->clientiAllaCassa[0];
         //I scroll all the tills
-        for(int i = 1; i < this->numerocasse;i++){
+        int i;
+        for(i = 1; i < this->numerocasse;i++){
             //I check if the actual value is lower or equal to the actual minimum
             if(this->clientiAllaCassa[i] <= minore){
                 if(this->clientiAllaCassa[i] == minore)
@@ -82,14 +83,14 @@ int Decisore::findlowest(int parametro){
 int Decisore::newCustomer(int parameter){
     //Finding the right till
     int position = this->findlowest(parameter);
-    this->clientiAllaCassa[i]++;
+    this->clientiAllaCassa[position]++;
     return position;
 }
 //This method is used by the till to indicate that it has finished to service one customer, and in particular is usefull
 //in case of a common queue, because the till are work-conserving, i.e. the must serve all customers in queue without going
 //in idle. This function is called by a till when it has served a customer and if there are other customers in queue it assign
 //the fist of them immediately to the "till" who has called this method.
-bool Decisore::ServiceComplete(int i){
+void Decisore::ServiceComplete(int i){
     //I'm getting the Module of the caller scrolling the hierarchy starting from the parent of all this modules (the network)
     //and searching the submodule with the index passed to the method
     if(i < 0 || i >= this->numerocasse)
@@ -101,9 +102,14 @@ bool Decisore::ServiceComplete(int i){
         if(this->inAttesa > 0){
             //From that point the new customer starts to go to the assigned till
             this->inAttesa--;
+<<<<<<< HEAD
             this->clientiAllaCassa[i]++;
+=======
+            //Finally the customer is arrived to the till!!!
+>>>>>>> 26436111d4a2e3bc4ccbb9a548c43ca10908d0bc
             //Dire alla coda di inviare un pacchetto
-            return true;
+            //this->clientiAllaCassa[i]++;
+        }
     }
 }
 
