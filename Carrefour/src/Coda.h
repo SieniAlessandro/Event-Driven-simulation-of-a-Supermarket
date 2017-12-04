@@ -17,19 +17,20 @@
 #define __CARREFOUR_CODA_H_
 
 #include <omnetpp.h>
+#include <vector>
 #include "Decisore.h"
 using namespace omnetpp;
 
-/**
- * TODO - Generated class
- */
 class Coda : public cSimpleModule
 {
+    std::vector<cMessage*> customers;
     //The reference of our decisore that we use to choose the right tie
     Decisore *decisore;
+    cGate* gates;
 protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
+
 };
 
 #endif

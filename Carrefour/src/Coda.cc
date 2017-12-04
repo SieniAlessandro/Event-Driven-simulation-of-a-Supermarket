@@ -4,21 +4,34 @@ Define_Module(Coda);
 
 void Coda::initialize()
 {
+    gates = new cGate[par("numeroCasse")];
+    for(int i = 0; i<gateSize("out"); i++) {
+        gates[i] = gate("out", i);
+    }
+
+
     //Obtaining the reference to the module Decisore,to use its own methods
     this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
 }
 
 void Coda::handleMessage(cMessage *msg) {
-/*    QueueMessage* message = check_and_cast<QueueMessage*>(msg);
-        if (message->getOperationType() == NEW_CUSTOMER) {
-            queue.insert(message);
-        } else if (message->getOperationType() == CASSA_LIBERA) {
-            if (!queue.isEmpty()) {
-                QueueMessage* reply = check_and_cast<QueueMessage*>(queue.pop());
-                send(reply, msg->getSenderGate());
-            } else {
-                //Rimuovere dalla coda il primo entrato e mandarlo alla cassa
-            }
-        }*/
+    if(msg->isSelfMessage()) {
+        //Inserting the new client ah the endof the queue
+        customers.push_back(new cMessage("Cliente"));
+    }
+    if(customers.size() > 0) {
+        //Send
+
+
+    //get the index of the till
+    int indice = decisore->newCustomer();
+    if(indice >= 0) {
+        send(customers(0), gates[indice].getFullName());
+        customers.erase(customers.begin());
+    }
+
+
+    }
+
 }
 
