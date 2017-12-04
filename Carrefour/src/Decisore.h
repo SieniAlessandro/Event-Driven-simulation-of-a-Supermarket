@@ -18,12 +18,9 @@ private:
    //This attribute indicates the number of tills present in our system
    int numerocasse;
    //This Attribute is used when there is a common queue and indicates the number of customers that are waiting to be
-<<<<<<< HEAD
    //served
-=======
    //served, and it is set to 5000 (it's important to mantein the status of infinite memory that the maximum number of
    //customer "generated" is lower than the dimension of the array plus then numeber of tills.
->>>>>>> 26436111d4a2e3bc4ccbb9a548c43ca10908d0bc
    int inAttesa;
    //Private Method used to find the till with the less number of customer in queue
    int findlowest(int);

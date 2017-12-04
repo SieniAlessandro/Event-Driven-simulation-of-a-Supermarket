@@ -102,11 +102,8 @@ void Decisore::ServiceComplete(int i){
         if(this->inAttesa > 0){
             //From that point the new customer starts to go to the assigned till
             this->inAttesa--;
-<<<<<<< HEAD
             this->clientiAllaCassa[i]++;
-=======
-            //Finally the customer is arrived to the till!!!
->>>>>>> 26436111d4a2e3bc4ccbb9a548c43ca10908d0bc
+            //Finally the customer is arrived to the till!!!s
             //Dire alla coda di inviare un pacchetto
             //this->clientiAllaCassa[i]++;
         }
