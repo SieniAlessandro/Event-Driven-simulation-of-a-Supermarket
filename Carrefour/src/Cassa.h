@@ -4,6 +4,7 @@
 #include <omnetpp.h>
 #include <vector>
 #include "Decisore.h"
+#include "Customer.h"
 using namespace omnetpp;
 
 class Cassa : public cSimpleModule

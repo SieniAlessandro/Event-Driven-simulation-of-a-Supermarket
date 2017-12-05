@@ -9,7 +9,7 @@
 #include <string>
 using namespace omnetpp;
 using namespace std;
-class Customer: protected cMessage{
+class Customer: public cMessage{
     static int global_id;
     int id;
     //This Attribute stands for the object of the messagge

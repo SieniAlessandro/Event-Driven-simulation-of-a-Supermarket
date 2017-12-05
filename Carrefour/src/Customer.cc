@@ -1,5 +1,6 @@
 #include "Customer.h"
 int Customer::global_id = 0;
+
 Customer::Customer() {
     this->Message = "Messaggio";
     this->id = global_id++;
