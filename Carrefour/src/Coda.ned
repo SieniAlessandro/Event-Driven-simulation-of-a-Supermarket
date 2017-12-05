@@ -20,7 +20,9 @@ package carrefour;
 //
 simple Coda
 {
+    parameters:
+        int casse;
     gates : 
-        input in[30];
-        output out[30];
+        input in[casse];
+        output out[casse];
 }

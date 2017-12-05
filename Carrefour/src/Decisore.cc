@@ -6,12 +6,11 @@
  */
 
 #include "Decisore.h"
-Define_Module(Decisore)
 Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the
     //network itself, and with the help of the method par(), i get the requested parameter
-    this->numerocasse = par("numerocasse");
+    this->numerocasse = par("numeroCasse").longValue();
     //I generate an array of integer with a length equal to the number of ties, because in position
     //is contained the number of person in queue who are waiting to be served at the i-tie
     this->clientiAllaCassa = new int[numerocasse];

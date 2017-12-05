@@ -22,20 +22,19 @@ import carrefour.*;
 network Carrefour
 {
     parameters:
-        int numerocasse = 30;
+        int numeroCasse;
         double delay = 10.0; //Minimun delay for reach the nearest till, the delay grows linerly in proprtion 
 							//to the distance (in our simulation the distance is rappresented by the position
 							//of a specific till in the array)
-        @display("bgb=747,274");
+		int lambda;
+		int mu;
     submodules:
-        casse[numerocasse]: Cassa {
-            @display("p=555,69");
-        }
-        coda: Coda {
-            @display("p=92,69");
-        }
+        casse[numeroCasse]: Cassa;
+        coda: Coda{
+            casse = numeroCasse;
+        } 
     connections:
-        for i=0..numerocasse-1 {
+        for i=0..numeroCasse-1 {
             //casse[i].in <-- coda.out;
             coda.out[i] --> casse[i].in;
             casse[i].out --> coda.in[i];

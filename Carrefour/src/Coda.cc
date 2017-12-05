@@ -9,20 +9,20 @@ void Coda::initialize()
     seed = 1;
     //Initializing all the port gates of Coda, because it need as many outputs ports
     //as the number of Casse in the simulation
-    gates = new cGate*[atoi(par("numeroCasse"))];
+    gates = new cGate*[getParentModule()->par("numeroCasse").longValue()];
     for(int i = 0; i<gateSize("out"); i++) {
         gates[i] = gate("out", i);
     }
-
     //Obtaining the reference to the module Decisore,to use its own methods
-    this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
+    //this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
+    //Starting the simulation
 }
 
 void Coda::handleMessage(cMessage *msg) {
     if(msg->isSelfMessage()) {
         //Inserting the new client at the end of the queue
         std::string name = "Cliente " + std::to_string(seed);
-        customers.push_back(new cMessage(name.c_str()));
+        customers.push_back(new cMessage());
     }
     if(customers.size() > 0) {
         //get the index of the till
