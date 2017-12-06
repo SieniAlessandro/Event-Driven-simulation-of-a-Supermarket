@@ -24,7 +24,7 @@ private:
    int inAttesa;
    //Private Method used to find the till with the less number of customer in queue
    int findlowest(int);
-   cComponent *get;
+   cModule *get;
 public:
     Decisore();
     int newCustomer(int parameter = 0);

@@ -6,6 +6,7 @@
  */
 
 #include "Decisore.h"
+Register_Class(Decisore)
 Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the

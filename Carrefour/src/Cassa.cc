@@ -26,6 +26,7 @@ void Cassa::initialize()
     //Obtaining the reference to the module Decisore,to use its own methods
     //this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
     //Setting the Cassa in idle state
+    //this->decisore = createOne(Decisore);
     isWorking = false;
 }
 
