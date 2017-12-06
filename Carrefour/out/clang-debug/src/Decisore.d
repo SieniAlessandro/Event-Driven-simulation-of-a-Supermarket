@@ -1,6 +1,6 @@
-../out/clang-release/src/Customer.o: Customer.cc Customer.h \
+../out/clang-debug/src/Decisore.o: Decisore.cc Decisore.h \
   C:/Users/maghe/Downloads/omnetpp-5.2-src-windows/omnetpp-5.2/include\omnetpp.h
 
-Customer.h:
+Decisore.h:
 
 C:/Users/maghe/Downloads/omnetpp-5.2-src-windows/omnetpp-5.2/include\omnetpp.h:

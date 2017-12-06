@@ -12,6 +12,7 @@ Decisore::Decisore() {
     //network itself, and with the help of the method par(), i get the requested parameter
     //get = new cComponent();
     //this->numerocasse = get->par("numeroCasse").longValue();
+    this->numerocasse = 2;
     //I generate an array of integer with a length equal to the number of ties, because in position
     //is contained the number of person in queue who are waiting to be served at the i-tie
     this->clientiAllaCassa = new int[numerocasse];
