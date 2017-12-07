@@ -31,7 +31,7 @@ public:
     bool ServiceComplete(int i);
     ~Decisore();
 protected:
-
+    void initialize();
 };
 
 #endif

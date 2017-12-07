@@ -7,6 +7,10 @@
 
 #include "Decisore.h"
 Define_Module(Decisore)
+
+void Decisore::initialize(){
+    this->numerocasse = getParentModule()->par("numeroCasse").longValue();
+}
 Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the
@@ -39,7 +43,7 @@ Decisore::~Decisore() {
 
 int Decisore::findlowest(int parametro){
 
-    this->numerocasse = getParentModule()->par("numeroCasse").longValue();
+
     //Parametro = 0 -> We want to operate with tills without each own single queue
     if(parametro == 0) {//Instead of parametro use configuration parameter
     //I scroll all the tills
