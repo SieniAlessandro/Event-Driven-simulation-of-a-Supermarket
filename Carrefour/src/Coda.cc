@@ -37,6 +37,6 @@ void Coda::handleMessage(cMessage *msg) {
         }
     }
     //This function simulates the arrival rate, 1/lambda, of the customers
-    scheduleAt(simTime()+omnetpp::exponential(getRNG(seed++), 1/getParentModule()->par("lambda").longValue()), customers[0]);
+    scheduleAt(simTime()+omnetpp::exponential(getRNG(seed++), 1/getParentModule()->par("lambda").longValue()), new cMessage());
 }
 
