@@ -6,7 +6,7 @@
  */
 
 #include "Decisore.h"
-Register_Class(Decisore)
+Define_Module(Decisore)
 Decisore::Decisore() {
 
     //I get the number of ties acceding to the parent of this module,that in this case is the
@@ -83,10 +83,21 @@ int Decisore::findlowest(int parametro){
 //Input parameter : parameter(int) - Is used to define which case we are simulating
 //Output          : int            - In this implementation the function return the position of the till
 int Decisore::newCustomer(int parameter){
-
+    //Debugging
+    EV << "Chiamato il decisore" << endl;
     //Finding the right till
     int position = this->findlowest(parameter);
-    this->clientiAllaCassa[position]++;
+    //Debugging
+    EV << "Posizione Assegnata: "<<position << endl;
+    if(position > -1)
+        this->clientiAllaCassa[position]++;
+    else{
+        //Debugging
+        EV << "Nessun posto disponibile, lo metto in attesa" << endl;
+        this->inAttesa++;
+        //Debugging
+        EV << "Clienti in Attesa : " << this->inAttesa << endl;
+    }
     return position;
 }
 //This method is used by the till to indicate that it has finished to service one customer, and in particular is usefull

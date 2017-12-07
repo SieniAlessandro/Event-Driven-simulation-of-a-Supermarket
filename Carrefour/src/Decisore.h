@@ -8,7 +8,8 @@
 
 using namespace omnetpp;
 
-class Decisore: public cObject {
+class Decisore: public cSimpleModule
+{
 private:
    //This array is used to indicate the number of customer for each single queue :
    //-In case of common queue the only possible variable are 0 (idle) or 1(serving one customer, working)
@@ -24,7 +25,6 @@ private:
    int inAttesa;
    //Private Method used to find the till with the less number of customer in queue
    int findlowest(int);
-   cModule *get;
 public:
     Decisore();
     int newCustomer(int parameter = 0);

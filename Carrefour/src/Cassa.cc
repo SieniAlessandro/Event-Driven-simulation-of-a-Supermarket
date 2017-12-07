@@ -24,9 +24,8 @@ void Cassa::initialize()
     //Setting the identifier of the single Cassa
     numeroCassa = numeroCasse++;
     //Obtaining the reference to the module Decisore,to use its own methods
-    //this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
+    this->decisore = check_and_cast<Decisore *> (getParentModule()->getModuleByPath("decisore"));
     //Setting the Cassa in idle state
-    //this->decisore = createOne(Decisore);
     isWorking = false;
 }
 
@@ -41,6 +40,8 @@ void Cassa::handleMessage(cMessage *msg)
         //Setting the cassa in idle state
         isWorking = false;
     }else{//otherwise a new client arrives in the Cassa
+        //Debugging
+        EV << "Mi e' arrivato un customer"<< endl;
         //Buffering the new client
         customers.push_back(msg);
 

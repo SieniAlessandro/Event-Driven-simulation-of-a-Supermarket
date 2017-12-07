@@ -15,7 +15,7 @@ void Coda::initialize()
     }
     scheduleAt(simTime()+1000,new cMessage());
     //Obtaining the reference to the module Decisore,to use its own methods
-    //this->decisore = check_and_cast<Decisore *> (getModuleByPath("Decisore"));
+    this->decisore = check_and_cast<Decisore *> (getParentModule()->getModuleByPath("decisore"));
     //Starting the simulation
 }
 
@@ -31,11 +31,10 @@ void Coda::handleMessage(cMessage *msg) {
         if(indice >= 0) {
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
-            //send(customers[0], gates[indice]->getFullName());
+            send(customers[0], gates[indice]->getFullName());
             //Remove that costumers from the queue
             customers.erase(customers.begin());
         }
-
     }
     //This function simulates the arrival rate, 1/lambda, of the customers
     scheduleAt(simTime()+omnetpp::exponential(getRNG(seed++), 1/getParentModule()->par("lambda").longValue()), customers[0]);
