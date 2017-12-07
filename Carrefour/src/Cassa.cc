@@ -36,7 +36,10 @@ void Cassa::handleMessage(cMessage *msg)
         //remove the customer from the Cassa
         customers.erase(customers.begin());
         //Inform the Decisore that one of its customer leaves
-        decisore->ServiceComplete(this->numeroCassa);
+        if(decisore->ServiceComplete(this->numeroCassa)){
+            send(new cMessage(), "out");
+        }
+
 
         //Setting the cassa in idle state
         isWorking = false;

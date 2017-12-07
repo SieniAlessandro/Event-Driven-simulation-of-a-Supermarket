@@ -24,6 +24,8 @@ void Coda::handleMessage(cMessage *msg) {
         //Inserting the new client at the end of the queue
         std::string name = "Cliente " + std::to_string(seed);
         customers.push_back(new Customer(name));
+        //This function simulates the arrival rate, 1/lambda, of the customers
+           scheduleAt(simTime()+omnetpp::exponential(getRNG(seed++), 1/getParentModule()->par("lambda").longValue()), new cMessage());
     }
     if(customers.size() > 0) {
         //get the index of the till
@@ -35,11 +37,7 @@ void Coda::handleMessage(cMessage *msg) {
             //Remove that costumers from the queue
             customers.erase(customers.begin());
         }
-        if(indice == ){
-
-        }
     }
-    //This function simulates the arrival rate, 1/lambda, of the customers
-    scheduleAt(simTime()+omnetpp::exponential(getRNG(seed++), 1/getParentModule()->par("lambda").longValue()), new cMessage());
+
 }
 
