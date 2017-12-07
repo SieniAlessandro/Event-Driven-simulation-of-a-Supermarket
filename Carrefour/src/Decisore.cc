@@ -13,13 +13,14 @@ Decisore::Decisore() {
     //network itself, and with the help of the method par(), i get the requested parameter
     //get = new cComponent();
     //this->numerocasse = get->par("numeroCasse").longValue();
-    this->numerocasse = 2;
+    //this->numerocasse = getParentModule()->par("numeroCasse").longValue();
     //I generate an array of integer with a length equal to the number of ties, because in position
     //is contained the number of person in queue who are waiting to be served at the i-tie
     this->clientiAllaCassa = new int[numerocasse];
     //At the beginning i set to 0 all the element of the array with the function memset. In this
     //function the third parameter is computed by the number of element of the array times tbe size
     //of a single element(in byte)
+    this->inAttesa = 0;
     memset(this->clientiAllaCassa,0,sizeof(int)*numerocasse);
   }
 
@@ -38,6 +39,7 @@ Decisore::~Decisore() {
 
 int Decisore::findlowest(int parametro){
 
+    this->numerocasse = getParentModule()->par("numeroCasse").longValue();
     //Parametro = 0 -> We want to operate with tills without each own single queue
     if(parametro == 0) {//Instead of parametro use configuration parameter
     //I scroll all the tills
@@ -116,9 +118,10 @@ bool Decisore::ServiceComplete(int i){
         //The decisore check if are customer waiting a service,and if are present, they are assigned to the till
         //This is necessary to maintain the status of work-conserving for the system.
         if(this->inAttesa > 0){
+            EV << "La cassa" << i << " ha chiesto un nuovo cliente" << endl;
             //From that point the new customer starts to go to the assigned till
             this->inAttesa--;
-            this->clientiAllaCassa[i]++;
+            //this->clientiAllaCassa[i]++;
             //Finally the customer is arrived to the till!!!s
             //Dire alla coda di inviare un pacchetto
             //this->clientiAllaCassa[i]++;
