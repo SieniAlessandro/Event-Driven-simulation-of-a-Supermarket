@@ -28,7 +28,7 @@ private:
 public:
     Decisore();
     int newCustomer(int parameter = 0);
-    void ServiceComplete(int i);
+    bool ServiceComplete(int i);
     ~Decisore();
 protected:
 

@@ -104,11 +104,13 @@ int Decisore::newCustomer(int parameter){
 //in case of a common queue, because the till are work-conserving, i.e. the must serve all customers in queue without going
 //in idle. This function is called by a till when it has served a customer and if there are other customers in queue it assign
 //the fist of them immediately to the "till" who has called this method.
-void Decisore::ServiceComplete(int i){
+bool Decisore::ServiceComplete(int i){
     //I'm getting the Module of the caller scrolling the hierarchy starting from the parent of all this modules (the network)
     //and searching the submodule with the index passed to the method
-    if(i < 0 || i >= this->numerocasse)
+    if(i < 0 || i >= this->numerocasse){
         EV << "The index passed is not correct" << endl;
+        return false;
+    }
     else{
         this->clientiAllaCassa[i]--;
         //The decisore check if are customer waiting a service,and if are present, they are assigned to the till
@@ -120,7 +122,9 @@ void Decisore::ServiceComplete(int i){
             //Finally the customer is arrived to the till!!!s
             //Dire alla coda di inviare un pacchetto
             //this->clientiAllaCassa[i]++;
+            return true;
         }
+        return false;
     }
 }
 
