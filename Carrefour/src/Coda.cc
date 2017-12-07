@@ -31,7 +31,7 @@ void Coda::handleMessage(cMessage *msg) {
         if(indice >= 0) {
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
-            send(customers[0], gates[indice]->getFullName());
+            send(customers[0], gates[indice]);
             //Remove that costumers from the queue
             customers.erase(customers.begin());
         }
