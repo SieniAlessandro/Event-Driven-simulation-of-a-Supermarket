@@ -30,13 +30,15 @@ network Carrefour
         int mu;
     submodules:
         casse[numeroCasse]: Cassa {
-            @display("p=52,44");
+            @display("p=88,44");
         }
         coda: Coda {
             casse = numeroCasse;
-            @display("p=511,44");
+            @display("p=293,44");
         }
-        decisore: Decisore;
+        decisore: Decisore {
+            @display("p=402,125");
+        }
     connections:
         for i=0..numeroCasse-1 {
             //casse[i].in <-- coda.out;
