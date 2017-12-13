@@ -18,16 +18,17 @@ private:
    int* clientiAllaCassa;
    //This attribute indicates the number of tills present in our system
    int numerocasse;
+   int tipoSimulazione;
    //This Attribute is used when there is a common queue and indicates the number of customers that are waiting to be
    //served
    //served, and it is set to 5000 (it's important to mantein the status of infinite memory that the maximum number of
    //customer "generated" is lower than the dimension of the array plus then numeber of tills.
    int inAttesa;
    //Private Method used to find the till with the less number of customer in queue
-   int findlowest(int);
+   int findlowest();
 public:
     Decisore();
-    int newCustomer(int parameter = 0);
+    int newCustomer();
     bool ServiceComplete(int i);
     ~Decisore();
 protected:

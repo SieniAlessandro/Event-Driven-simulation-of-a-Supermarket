@@ -5,41 +5,40 @@ Define_Module(Coda);
 
 void Coda::initialize()
 {
-    //Initializing static fields
-    seed = 1;
     //Initializing all the port gates of Coda, because it need as many outputs ports
     //as the number of Casse in the simulation
-    gates = new cGate*[getParentModule()->par("numeroCasse").longValue()];
+    this->gates = new cGate*[getParentModule()->par("numeroCasse").longValue()];
     for(int i = 0; i<gateSize("out"); i++) {
-        gates[i] = gate("out", i);
+        this->gates[i] = gate("out", i);
     }
-    scheduleAt(simTime()+7,new cMessage());
     //Declaring the rng
-    rng = new cMersenneTwister();
+    this->rng = new cMersenneTwister();
     //Obtaining the reference to the module Decisore,to use its own methods
-    this->decisore = check_and_cast<Decisore *> (getParentModule()->getModuleByPath("decisore"));
+    decisore = check_and_cast<Decisore *> (getParentModule()->getModuleByPath("decisore"));
     //Starting the simulation
-
+    scheduleAt(simTime()+7,new cMessage());
 }
 
+//If self message then is arrived a new customer
+//else if there is at least one customer in the queue and there is at least one available till
+//send the customer
 void Coda::handleMessage(cMessage *msg) {
     if(msg->isSelfMessage()) {
         //Inserting the new client at the end of the queue
-        std::string name = "Cliente " + std::to_string(seed);
-        customers.push_back(new Customer(name));
-        //This function simulates the arrival rate, 1/lambda, of the customers
+        this->customers.push_back(new Customer("Cliente"));
 
+        //This function simulates the arrival rate, 1/lambda, of the customers
         scheduleAt(simTime()+omnetpp::exponential(rng, getParentModule()->par("lambda").longValue()), new cMessage());
     }
-    if(customers.size() > 0) {
+    if(this->customers.size() > 0) {
         //get the index of the till
         int indice = decisore->newCustomer();
         if(indice >= 0) {
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
-            send(customers[0], gates[indice]);
+            send(this->customers[0], this->gates[indice]);
             //Remove that costumers from the queue
-            customers.erase(customers.begin());
+            this->customers.erase(this->customers.begin());
         }
     }
 

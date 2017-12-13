@@ -10,9 +10,7 @@ Define_Module(Decisore)
 
 void Decisore::initialize(){
     this->numerocasse = getParentModule()->par("numeroCasse").longValue();
-}
-Decisore::Decisore() {
-
+    this->tipoSimulazione = getParentModule()->par("tipoSimulazione").longValue();
     //I get the number of ties acceding to the parent of this module,that in this case is the
     //network itself, and with the help of the method par(), i get the requested parameter
     //get = new cComponent();
@@ -20,12 +18,19 @@ Decisore::Decisore() {
     //this->numerocasse = getParentModule()->par("numeroCasse").longValue();
     //I generate an array of integer with a length equal to the number of ties, because in position
     //is contained the number of person in queue who are waiting to be served at the i-tie
-    this->clientiAllaCassa = new int[numerocasse];
+    this->clientiAllaCassa = new int[this->numerocasse];
     //At the beginning i set to 0 all the element of the array with the function memset. In this
     //function the third parameter is computed by the number of element of the array times tbe size
     //of a single element(in byte)
     this->inAttesa = 0;
-    memset(this->clientiAllaCassa,0,sizeof(int)*numerocasse);
+    memset(this->clientiAllaCassa,0,sizeof(int)*this->numerocasse);
+    //Prova per me, OK??
+    for(int i = 0; i < this->numerocasse; i++){
+        EV << "indice " << i << " valore " << this->clientiAllaCassa[i] << endl;
+    }
+
+}
+Decisore::Decisore() {
   }
 
 Decisore::~Decisore() {
@@ -41,22 +46,25 @@ Decisore::~Decisore() {
 //               element in queue,the function choose the till with the lowest index.
 
 
-int Decisore::findlowest(int parametro){
+int Decisore::findlowest(){
 
 
     //Parametro = 0 -> We want to operate with tills without each own single queue
-    if(parametro == 0) {//Instead of parametro use configuration parameter
+    if(tipoSimulazione == 0) {
     //I scroll all the tills
-        for(int i = 0; i < this->numerocasse;i++)
+        for(int i = 0; i < this->numerocasse;i++){
             //I'm stop when the first free till is reached, because we want the nearest till, and after that
             //position is returned to the caller
+            EV << "indice : " << i << " elementi :" << this->clientiAllaCassa[i] << endl;
             if(this->clientiAllaCassa[i] == 0)
                 return i;
+        }
         //Returning -2 if there aren't any free tills
         return -2;
+
     }
     //Parametro = 1 -> We want to operate with tills who have each own queue
-    else if(parametro == 1){
+    else if(tipoSimulazione == 1){
         //I'm applying the common algorithm to find the minimum value in the array, with the difference that
         //I want to store the relative index, because in the event of a tie I'll choose the smaller index
         int indice = 0;
@@ -88,15 +96,16 @@ int Decisore::findlowest(int parametro){
 //is added to the queue
 //Input parameter : parameter(int) - Is used to define which case we are simulating
 //Output          : int            - In this implementation the function return the position of the till
-int Decisore::newCustomer(int parameter){
+int Decisore::newCustomer(){
     //Debugging
     EV << "Chiamato il decisore" << endl;
     //Finding the right till
-    int position = this->findlowest(parameter);
+    int position = this->findlowest();
     //Debugging
     EV << "Posizione Assegnata: "<<position << endl;
-    if(position > -1)
+    if(position > -1){
         this->clientiAllaCassa[position]++;
+    }
     else{
         //Debugging
         EV << "Nessun posto disponibile, lo metto in attesa" << endl;
@@ -134,5 +143,4 @@ bool Decisore::ServiceComplete(int i){
         return false;
     }
 }
-
 

@@ -28,6 +28,7 @@ network Carrefour
 							//of a specific till in the array)
         int lambda;
         int mu;
+        int tipoSimulazione;
     submodules:
         casse[numeroCasse]: Cassa {
             @display("p=88,44");

@@ -24,14 +24,13 @@ using namespace omnetpp;
 
 class Coda : public cSimpleModule
 {
-    //Needed to use always a different seed for every message, becouse they are IID
-    static int seed;
-    //Vector that contains the waiting messages
+    //Vector that contains the waiting customers
     std::vector<cMessage*> customers;
     //The reference of our decisore that we use to choose the right tie
     Decisore *decisore;
     //Instance used to get the references of all the output ports
     cGate** gates;
+    //Reference to the random number generator
     cMersenneTwister* rng;
 
 protected:
@@ -39,6 +38,5 @@ protected:
     virtual void handleMessage(cMessage *msg);
 
 };
-int Coda::seed;
 
 #endif
