@@ -13,10 +13,13 @@ void Coda::initialize()
     for(int i = 0; i<gateSize("out"); i++) {
         gates[i] = gate("out", i);
     }
-    scheduleAt(simTime()+1000,new cMessage());
+    scheduleAt(simTime()+7,new cMessage());
+    //Declaring the rng
+    rng = new cMersenneTwister();
     //Obtaining the reference to the module Decisore,to use its own methods
     this->decisore = check_and_cast<Decisore *> (getParentModule()->getModuleByPath("decisore"));
     //Starting the simulation
+
 }
 
 void Coda::handleMessage(cMessage *msg) {
@@ -25,7 +28,8 @@ void Coda::handleMessage(cMessage *msg) {
         std::string name = "Cliente " + std::to_string(seed);
         customers.push_back(new Customer(name));
         //This function simulates the arrival rate, 1/lambda, of the customers
-           scheduleAt(simTime()+omnetpp::exponential(getRNG(seed++), 1/getParentModule()->par("lambda").longValue()), new cMessage());
+
+        scheduleAt(simTime()+omnetpp::exponential(rng, getParentModule()->par("lambda").longValue()), new cMessage());
     }
     if(customers.size() > 0) {
         //get the index of the till

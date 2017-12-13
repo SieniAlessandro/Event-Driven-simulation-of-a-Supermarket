@@ -12,8 +12,6 @@ class Cassa : public cSimpleModule
 private:
     //Used to put an identifier to all the Cassa
     static int numeroCasse;
-    //Inserted to use always a different seed for every message, becouse they are IID
-    static int seed;
     //The identifier of the Cassa
     int numeroCassa;
     //The reference of our decisore that we use to choose the right tie
@@ -22,6 +20,8 @@ private:
     bool isWorking;
     //Used to put
     std::vector<cMessage*> customers;
+    //Random Number Generator
+    cMersenneTwister *rng;
  protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
@@ -29,6 +29,5 @@ private:
 };
 
 int Cassa::numeroCasse;
-int Cassa::seed;
 
 #endif

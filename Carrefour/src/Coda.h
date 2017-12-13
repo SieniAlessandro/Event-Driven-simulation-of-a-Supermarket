@@ -32,6 +32,7 @@ class Coda : public cSimpleModule
     Decisore *decisore;
     //Instance used to get the references of all the output ports
     cGate** gates;
+    cMersenneTwister* rng;
 
 protected:
     virtual void initialize();

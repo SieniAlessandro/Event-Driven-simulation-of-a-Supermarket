@@ -18,6 +18,7 @@ class Customer: public cMessage{
     simtime_t sending_time;
 
 public:
+    simtime_t getArrivalTime(){ return this->sending_time;}
     int operator==(Customer a);
     int operator==(string a);
     int operator==(char * a);
