@@ -33,7 +33,7 @@ void Coda::handleMessage(cMessage *msg) {
         //Updating the number of element in queue
         this->queuelenght++;
         //Registering the Interarrival time of the customer
-        emit(interarrivalSignal,simTime() - time_prec);
+        //emit(interarrivalSignal,simTime() - time_prec);
         emit(queuelenghtSignal,this->queuelenght);
         //Updating the precedent time
         time_prec = simTime();
@@ -48,7 +48,7 @@ void Coda::handleMessage(cMessage *msg) {
         if(indice >= 0) {
             //Updating the number of element in queue
             this->queuelenght--;
-            emit(queuelenghtSignal,this->queuelenght);
+
             //Registering the queuing time
             simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
             emit(queueingtimeSignal,simTime()-queueTime);
@@ -59,6 +59,6 @@ void Coda::handleMessage(cMessage *msg) {
             this->customers.erase(this->customers.begin());
         }
     }
-
+    emit(queuelenghtSignal,this->queuelenght);
 }
 
