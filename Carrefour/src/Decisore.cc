@@ -139,8 +139,9 @@ bool Decisore::ServiceComplete(int i){
             //Dire alla coda di inviare un pacchetto
             //this->clientiAllaCassa[i]++;
             return true;
-        }
-        return false;
+        }else
+            return false;
     }
+    return false;
 }
 

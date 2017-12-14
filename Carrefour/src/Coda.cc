@@ -41,8 +41,9 @@ void Coda::handleMessage(cMessage *msg) {
         //get the index of the till
         int indice = decisore->newCustomer();
         if(indice >= 0) {
+            simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
             //Registering the queuing time
-            emit(queueingtimeSignal,simTime()-((Customer *)this->customers[0])->getArrivalTime());
+            emit(queueingtimeSignal,simTime()-queueTime);
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
             send(this->customers[0], this->gates[indice]);

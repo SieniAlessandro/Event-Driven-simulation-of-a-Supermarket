@@ -26,8 +26,8 @@ network Carrefour
         double delay = 10.0; //Minimun delay for reach the nearest till, the delay grows linerly in proprtion 
 							//to the distance (in our simulation the distance is rappresented by the position
 							//of a specific till in the array)
-        int lambda;
-        int mu;
+        double lambda;
+        double mu;
         int tipoSimulazione;
     submodules:
         casse[numeroCasse]: Cassa {
