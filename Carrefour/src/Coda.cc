@@ -17,6 +17,10 @@ void Coda::initialize()
     decisore = check_and_cast<Decisore *> (getParentModule()->getModuleByPath("decisore"));
     //Starting the simulation
     scheduleAt(simTime()+7,new cMessage());
+    //Initilazing the signal
+    time_prec = 0;
+    this->interarrivalSignal = registerSignal("Interarrivals");
+    this->queueingtimeSignal = registerSignal("Queuing");
 }
 
 //If self message then is arrived a new customer
@@ -24,9 +28,12 @@ void Coda::initialize()
 //send the customer
 void Coda::handleMessage(cMessage *msg) {
     if(msg->isSelfMessage()) {
+        //Registering the Interarrival time of the customer
+        emit(interarrivalSignal,simTime() - time_prec);
+        //Updating the precedent time
+        time_prec = simTime();
         //Inserting the new client at the end of the queue
         this->customers.push_back(new Customer("Cliente"));
-
         //This function simulates the arrival rate, 1/lambda, of the customers
         scheduleAt(simTime()+omnetpp::exponential(rng, getParentModule()->par("lambda").longValue()), new cMessage());
     }
@@ -34,6 +41,8 @@ void Coda::handleMessage(cMessage *msg) {
         //get the index of the till
         int indice = decisore->newCustomer();
         if(indice >= 0) {
+            //Registering the queuing time
+
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
             send(this->customers[0], this->gates[indice]);

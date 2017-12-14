@@ -32,6 +32,10 @@ class Coda : public cSimpleModule
     cGate** gates;
     //Reference to the random number generator
     cMersenneTwister* rng;
+    //Variable used for statistical purposes
+    simsignal_t interarrivalSignal;
+    simsignal_t queueingtimeSignal;
+    simtime_t time_prec;
 
 protected:
     virtual void initialize();
