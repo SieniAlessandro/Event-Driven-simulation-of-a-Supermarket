@@ -1,24 +1,35 @@
 version 2
+<<<<<<< HEAD
 run General-0-20171214-11:27:22-3760
 attr configname General
 attr datetime 20171214-11:27:22
+=======
+run General-0-20171214-11:24:45-7344
+attr configname General
+attr datetime 20171214-11:24:45
+>>>>>>> 6b0e739628c3a8f722133ff309e3245a8d98b87d
 attr experiment General
 attr inifile carrefour.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Carrefour
+<<<<<<< HEAD
 attr processid 3760
+=======
+attr processid 7344
+>>>>>>> 6b0e739628c3a8f722133ff309e3245a8d98b87d
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-param **.lambda 21
-param **.numeroCasse 30
-param **.mu 400
-param **.tipoSimulazione 0
+param **.lambda 1
+param **.numeroCasse 2
+param **.mu 100
+param **.tipoSimulazione 1
 
+<<<<<<< HEAD
 scalar Carrefour.casse[0] ActiveTillStat:mean 0
 attr source ActiveTill
 attr title "Active Tills, mean"
@@ -560,20 +571,31 @@ scalar Carrefour.casse[29] TotalTimeStat:max 2655.5241049264
 attr source TotalTime
 attr title "Total Time, max"
 scalar Carrefour.coda QueueLenghtStat:mean 0.025419854308269
+=======
+scalar Carrefour.coda QueueLenghtStat:mean 0
+>>>>>>> 6b0e739628c3a8f722133ff309e3245a8d98b87d
 attr source QueueLenght
 attr title "Queue Lenght, mean"
 scalar Carrefour.coda QueueLenghtStat:min 0
 attr source QueueLenght
 attr title "Queue Lenght, min"
+<<<<<<< HEAD
 scalar Carrefour.coda QueueLenghtStat:max 13
 attr source QueueLenght
 attr title "Queue Lenght, max"
 scalar Carrefour.coda QueuingStat:mean 0.53933560135094
+=======
+scalar Carrefour.coda QueueLenghtStat:max 0
+attr source QueueLenght
+attr title "Queue Lenght, max"
+scalar Carrefour.coda QueuingStat:mean 0
+>>>>>>> 6b0e739628c3a8f722133ff309e3245a8d98b87d
 attr source Queuing
 attr title "Time in Queue, mean"
 scalar Carrefour.coda QueuingStat:min 0
 attr source Queuing
 attr title "Time in Queue, min"
+<<<<<<< HEAD
 scalar Carrefour.coda QueuingStat:max 323.93171263891
 attr source Queuing
 attr title "Time in Queue, max"
@@ -584,6 +606,18 @@ scalar Carrefour.coda InterrivalStat:min 4.5198065e-005
 attr source Interarrivals
 attr title "InterArrivals, min"
 scalar Carrefour.coda InterrivalStat:max 326.68953555249
+=======
+scalar Carrefour.coda QueuingStat:max 0
+attr source Queuing
+attr title "Time in Queue, max"
+scalar Carrefour.coda InterrivalStat:mean 1.0038972451354
+attr source Interarrivals
+attr title "InterArrivals, mean"
+scalar Carrefour.coda InterrivalStat:min 3.3866722e-005
+attr source Interarrivals
+attr title "InterArrivals, min"
+scalar Carrefour.coda InterrivalStat:max 10.6580617308
+>>>>>>> 6b0e739628c3a8f722133ff309e3245a8d98b87d
 attr source Interarrivals
 attr title "InterArrivals, max"
 

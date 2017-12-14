@@ -47,6 +47,10 @@ Decisore::~Decisore() {
 
 
 int Decisore::findlowest(){
+    for(int i = 0; i < this->numerocasse;i++)
+        //I'm stop when the first free till is reached, because we want the nearest till, and after that
+        //position is returned to the caller
+        EV << "indice : " << i << " elementi :" << this->clientiAllaCassa[i] << endl;
 
 
     //Parametro = 0 -> We want to operate with tills without each own single queue
@@ -73,19 +77,13 @@ int Decisore::findlowest(){
         int i;
         for(i = 1; i < this->numerocasse;i++){
             //I check if the actual value is lower or equal to the actual minimum
-            if(this->clientiAllaCassa[i] <= minore){
-                if(this->clientiAllaCassa[i] == minore)
+            if(this->clientiAllaCassa[i] < minore){
                     //If are equal the algorithm chooses the smaller index
-                    indice = (i < indice) ? i : indice;
-            }
-            else{
-                //The algorithm set the next index and the new minimum values
-                //I set the next index and the new minimum values
-                indice = i;
-                minore = this->clientiAllaCassa[i];
+                    indice = i;
+                    minore = this->clientiAllaCassa[i];
             }
         }
-        return i;
+        return indice;
     }
     else
         //This return is to indicate that the passed parameter is not correct
