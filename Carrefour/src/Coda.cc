@@ -39,6 +39,7 @@ void Coda::handleMessage(cMessage *msg) {
         time_prec = simTime();
         //Inserting the new client at the end of the queue
         this->customers.push_back(new Customer("Cliente"));
+
         //This function simulates the arrival rate, 1/lambda, of the customers
         scheduleAt(simTime()+omnetpp::exponential(rng, getParentModule()->par("lambda").longValue()), new cMessage());
     }
@@ -48,6 +49,7 @@ void Coda::handleMessage(cMessage *msg) {
         if(indice >= 0) {
             //Updating the number of element in queue
             this->queuelenght--;
+            emit(queuelenghtSignal,this->queuelenght);
             //Registering the queuing time
             simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
             emit(queueingtimeSignal,simTime()-queueTime);
@@ -58,6 +60,6 @@ void Coda::handleMessage(cMessage *msg) {
             this->customers.erase(this->customers.begin());
         }
     }
-    emit(queuelenghtSignal,this->queuelenght);
+
 }
 
