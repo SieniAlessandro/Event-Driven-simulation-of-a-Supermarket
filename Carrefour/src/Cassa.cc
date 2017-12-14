@@ -16,12 +16,14 @@
 #include "Cassa.h"
 
 Define_Module(Cassa);
+
 void Cassa::initialize()
 {
     //Initializing the static parameters
-    this->numeroCasse = 0;
+
     //Setting the identifier of the single Cassa
     this->numeroCassa = numeroCasse++;
+    EV << "io sono la cassa numero "<<this->numeroCassa<<endl;
     //Obtaining the reference to the module Decisore,to use its own methods
     decisore = check_and_cast<Decisore *> (getParentModule()->getModuleByPath("decisore"));
     //Setting the Cassa in idle state

@@ -28,6 +28,6 @@ private:
     //Method used to know if this till are actually working, and used by the module "Cassa".
 };
 
-int Cassa::numeroCasse;
+int Cassa::numeroCasse = 0;
 
 #endif
