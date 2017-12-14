@@ -28,7 +28,9 @@ void Decisore::initialize(){
     for(int i = 0; i < this->numerocasse; i++){
         EV << "indice " << i << " valore " << this->clientiAllaCassa[i] << endl;
     }
-
+    //Registering Signals
+    this->ActiveTillSignal = registerSignal("ActiveTill");
+    this->TotalTimeSignal = registerSignal("TotalTime");
 }
 Decisore::Decisore() {
   }
@@ -117,7 +119,9 @@ int Decisore::newCustomer(){
 //in case of a common queue, because the till are work-conserving, i.e. the must serve all customers in queue without going
 //in idle. This function is called by a till when it has served a customer and if there are other customers in queue it assign
 //the fist of them immediately to the "till" who has called this method.
-bool Decisore::ServiceComplete(int i){
+bool Decisore::ServiceComplete(int i,simtime_t arrive){
+
+
     //I'm getting the Module of the caller scrolling the hierarchy starting from the parent of all this modules (the network)
     //and searching the submodule with the index passed to the method
     if(i < 0 || i >= this->numerocasse){
@@ -125,6 +129,11 @@ bool Decisore::ServiceComplete(int i){
         return false;
     }
     else{
+
+        emit(TotalTimeSignal,simTime() - arrive);
+        //Updating the active till
+        emit(ActiveTillSignal,i);
+        //remove the customer from the Cassa
         this->clientiAllaCassa[i]--;
         //The decisore check if are customer waiting a service,and if are present, they are assigned to the till
         //This is necessary to maintain the status of work-conserving for the system.

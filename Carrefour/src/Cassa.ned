@@ -20,11 +20,7 @@ package carrefour;
 //
 simple Cassa
 {
-    parameters:
-         @signal[TotalTime](type = simtime_t);
-         @signal[ActiveTill](type = int);
-         @statistic[TotalTimeStat](title="Total Time";source=TotalTime;record=mean,vector,min,max);
-         @statistic[ActiveTillStat](title="Active Tills";source=ActiveTill;record=mean,vector,min,max);
+   
     gates:
         input in;
         output out;

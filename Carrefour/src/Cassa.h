@@ -22,8 +22,7 @@ private:
     std::vector<cMessage*> customers;
     //Random Number Generator
     cMersenneTwister *rng;
-    simsignal_t TotalTimeSignal;
-    simsignal_t ActiveTillSignal;
+
  protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);

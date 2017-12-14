@@ -26,10 +26,13 @@ private:
    int inAttesa;
    //Private Method used to find the till with the less number of customer in queue
    int findlowest();
+   //Atribute used for statistical purposes
+   simsignal_t TotalTimeSignal;
+    simsignal_t ActiveTillSignal;
 public:
     Decisore();
     int newCustomer();
-    bool ServiceComplete(int i);
+    bool ServiceComplete(int i,simtime_t);
     ~Decisore();
 protected:
     void initialize();
