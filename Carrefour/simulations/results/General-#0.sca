@@ -1,14 +1,14 @@
 version 2
-run General-0-20171214-11:09:23-6952
+run General-0-20171214-11:27:22-3760
 attr configname General
-attr datetime 20171214-11:09:23
+attr datetime 20171214-11:27:22
 attr experiment General
 attr inifile carrefour.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Carrefour
-attr processid 6952
+attr processid 3760
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -19,31 +19,571 @@ param **.numeroCasse 30
 param **.mu 400
 param **.tipoSimulazione 0
 
-scalar Carrefour.coda QueueLenghtStat:mean 0.018325352527933
+scalar Carrefour.casse[0] ActiveTillStat:mean 0
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[0] ActiveTillStat:min 0
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[0] ActiveTillStat:max 0
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[0] TotalTimeStat:mean 403.0319894778
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[0] TotalTimeStat:min 0.101115295357
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[0] TotalTimeStat:max 3747.7799841779
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[1] ActiveTillStat:mean 1
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[1] ActiveTillStat:min 1
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[1] ActiveTillStat:max 1
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[1] TotalTimeStat:mean 403.91740539938
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[1] TotalTimeStat:min 0.023635988874
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[1] TotalTimeStat:max 3254.8880713956
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[2] ActiveTillStat:mean 2
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[2] ActiveTillStat:min 2
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[2] ActiveTillStat:max 2
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[2] TotalTimeStat:mean 398.6701939395
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[2] TotalTimeStat:min 0.013398789759
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[2] TotalTimeStat:max 3309.9774444719
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[3] ActiveTillStat:mean 3
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[3] ActiveTillStat:min 3
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[3] ActiveTillStat:max 3
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[3] TotalTimeStat:mean 402.15331525832
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[3] TotalTimeStat:min 0.225145577375
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[3] TotalTimeStat:max 3560.5268044029
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[4] ActiveTillStat:mean 4
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[4] ActiveTillStat:min 4
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[4] ActiveTillStat:max 4
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[4] TotalTimeStat:mean 397.8673554718
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[4] TotalTimeStat:min 0.040356615439
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[4] TotalTimeStat:max 3966.136180287
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[5] ActiveTillStat:mean 5
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[5] ActiveTillStat:min 5
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[5] ActiveTillStat:max 5
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[5] TotalTimeStat:mean 401.56617689907
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[5] TotalTimeStat:min 0.012521641739
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[5] TotalTimeStat:max 6205.5011941956
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[6] ActiveTillStat:mean 6
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[6] ActiveTillStat:min 6
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[6] ActiveTillStat:max 6
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[6] TotalTimeStat:mean 392.17630402557
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[6] TotalTimeStat:min 0.086175246653
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[6] TotalTimeStat:max 3627.5858297298
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[7] ActiveTillStat:mean 7
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[7] ActiveTillStat:min 7
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[7] ActiveTillStat:max 7
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[7] TotalTimeStat:mean 396.25433687278
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[7] TotalTimeStat:min 0.015404651406
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[7] TotalTimeStat:max 3310.9434747237
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[8] ActiveTillStat:mean 8
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[8] ActiveTillStat:min 8
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[8] ActiveTillStat:max 8
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[8] TotalTimeStat:mean 400.54635990879
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[8] TotalTimeStat:min 0.012992905991
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[8] TotalTimeStat:max 3641.3944143915
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[9] ActiveTillStat:mean 9
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[9] ActiveTillStat:min 9
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[9] ActiveTillStat:max 9
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[9] TotalTimeStat:mean 397.0203425286
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[9] TotalTimeStat:min 0.069533557573
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[9] TotalTimeStat:max 4351.8517730418
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[10] ActiveTillStat:mean 10
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[10] ActiveTillStat:min 10
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[10] ActiveTillStat:max 10
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[10] TotalTimeStat:mean 397.27699067311
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[10] TotalTimeStat:min 0.036041199596
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[10] TotalTimeStat:max 3365.5243400246
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[11] ActiveTillStat:mean 11
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[11] ActiveTillStat:min 11
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[11] ActiveTillStat:max 11
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[11] TotalTimeStat:mean 397.42720892646
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[11] TotalTimeStat:min 0.117406993454
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[11] TotalTimeStat:max 3652.1114350238
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[12] ActiveTillStat:mean 12
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[12] ActiveTillStat:min 12
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[12] ActiveTillStat:max 12
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[12] TotalTimeStat:mean 400.64096381897
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[12] TotalTimeStat:min 0.187344290528
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[12] TotalTimeStat:max 3461.9698848399
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[13] ActiveTillStat:mean 13
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[13] ActiveTillStat:min 13
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[13] ActiveTillStat:max 13
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[13] TotalTimeStat:mean 394.63724254668
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[13] TotalTimeStat:min 0.012588978474
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[13] TotalTimeStat:max 3403.9512925294
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[14] ActiveTillStat:mean 14
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[14] ActiveTillStat:min 14
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[14] ActiveTillStat:max 14
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[14] TotalTimeStat:mean 401.77754790896
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[14] TotalTimeStat:min 0.004986518411
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[14] TotalTimeStat:max 4002.0042951045
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[15] ActiveTillStat:mean 15
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[15] ActiveTillStat:min 15
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[15] ActiveTillStat:max 15
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[15] TotalTimeStat:mean 397.59862125518
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[15] TotalTimeStat:min 0.04758959599
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[15] TotalTimeStat:max 3974.9712226423
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[16] ActiveTillStat:mean 16
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[16] ActiveTillStat:min 16
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[16] ActiveTillStat:max 16
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[16] TotalTimeStat:mean 403.35641275563
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[16] TotalTimeStat:min 0.128069530968
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[16] TotalTimeStat:max 4035.1895270908
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[17] ActiveTillStat:mean 17
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[17] ActiveTillStat:min 17
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[17] ActiveTillStat:max 17
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[17] TotalTimeStat:mean 403.70244164421
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[17] TotalTimeStat:min 0.078506461952
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[17] TotalTimeStat:max 3991.8518295644
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[18] ActiveTillStat:mean 18
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[18] ActiveTillStat:min 18
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[18] ActiveTillStat:max 18
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[18] TotalTimeStat:mean 399.07810782764
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[18] TotalTimeStat:min 0.002608177373
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[18] TotalTimeStat:max 3544.3008274292
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[19] ActiveTillStat:mean 19
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[19] ActiveTillStat:min 19
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[19] ActiveTillStat:max 19
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[19] TotalTimeStat:mean 399.57860747663
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[19] TotalTimeStat:min 0.288737723318
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[19] TotalTimeStat:max 3016.6153532235
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[20] ActiveTillStat:mean 20
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[20] ActiveTillStat:min 20
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[20] ActiveTillStat:max 20
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[20] TotalTimeStat:mean 402.95775621152
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[20] TotalTimeStat:min 0.030637588183
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[20] TotalTimeStat:max 2597.9786202447
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[21] ActiveTillStat:mean 21
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[21] ActiveTillStat:min 21
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[21] ActiveTillStat:max 21
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[21] TotalTimeStat:mean 400.11808537552
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[21] TotalTimeStat:min 0.05514750416
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[21] TotalTimeStat:max 3439.0962169243
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[22] ActiveTillStat:mean 22
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[22] ActiveTillStat:min 22
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[22] ActiveTillStat:max 22
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[22] TotalTimeStat:mean 397.97859059407
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[22] TotalTimeStat:min 0.017959096362
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[22] TotalTimeStat:max 3179.8974071107
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[23] ActiveTillStat:mean 23
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[23] ActiveTillStat:min 23
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[23] ActiveTillStat:max 23
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[23] TotalTimeStat:mean 391.97167278385
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[23] TotalTimeStat:min 0.134211940437
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[23] TotalTimeStat:max 3373.4344814398
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[24] ActiveTillStat:mean 24
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[24] ActiveTillStat:min 24
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[24] ActiveTillStat:max 24
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[24] TotalTimeStat:mean 407.58110364448
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[24] TotalTimeStat:min 0.108800070848
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[24] TotalTimeStat:max 3212.5413144767
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[25] ActiveTillStat:mean 25
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[25] ActiveTillStat:min 25
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[25] ActiveTillStat:max 25
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[25] TotalTimeStat:mean 398.70737834901
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[25] TotalTimeStat:min 0.237476618313
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[25] TotalTimeStat:max 2535.382362595
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[26] ActiveTillStat:mean 26
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[26] ActiveTillStat:min 26
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[26] ActiveTillStat:max 26
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[26] TotalTimeStat:mean 400.92246282044
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[26] TotalTimeStat:min 0.500564614609
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[26] TotalTimeStat:max 3441.7217937314
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[27] ActiveTillStat:mean 27
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[27] ActiveTillStat:min 27
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[27] ActiveTillStat:max 27
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[27] TotalTimeStat:mean 376.59572234883
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[27] TotalTimeStat:min 1.170941601099
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[27] TotalTimeStat:max 3346.0944882554
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[28] ActiveTillStat:mean 28
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[28] ActiveTillStat:min 28
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[28] ActiveTillStat:max 28
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[28] TotalTimeStat:mean 442.95310200665
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[28] TotalTimeStat:min 0.141750709653
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[28] TotalTimeStat:max 3254.9224661631
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.casse[29] ActiveTillStat:mean 29
+attr source ActiveTill
+attr title "Active Tills, mean"
+scalar Carrefour.casse[29] ActiveTillStat:min 29
+attr source ActiveTill
+attr title "Active Tills, min"
+scalar Carrefour.casse[29] ActiveTillStat:max 29
+attr source ActiveTill
+attr title "Active Tills, max"
+scalar Carrefour.casse[29] TotalTimeStat:mean 387.82451660056
+attr source TotalTime
+attr title "Total Time, mean"
+scalar Carrefour.casse[29] TotalTimeStat:min 0.773016556916
+attr source TotalTime
+attr title "Total Time, min"
+scalar Carrefour.casse[29] TotalTimeStat:max 2655.5241049264
+attr source TotalTime
+attr title "Total Time, max"
+scalar Carrefour.coda QueueLenghtStat:mean 0.025419854308269
 attr source QueueLenght
 attr title "Queue Lenght, mean"
 scalar Carrefour.coda QueueLenghtStat:min 0
 attr source QueueLenght
 attr title "Queue Lenght, min"
-scalar Carrefour.coda QueueLenghtStat:max 9
+scalar Carrefour.coda QueueLenghtStat:max 13
 attr source QueueLenght
 attr title "Queue Lenght, max"
-scalar Carrefour.coda QueuingStat:mean 0.39280812038476
+scalar Carrefour.coda QueuingStat:mean 0.53933560135094
 attr source Queuing
 attr title "Time in Queue, mean"
 scalar Carrefour.coda QueuingStat:min 0
 attr source Queuing
 attr title "Time in Queue, min"
-scalar Carrefour.coda QueuingStat:max 198.99408349828
+scalar Carrefour.coda QueuingStat:max 323.93171263891
 attr source Queuing
 attr title "Time in Queue, max"
-scalar Carrefour.coda InterrivalStat:mean 20.951156622249
+scalar Carrefour.coda InterrivalStat:mean 21.073765260187
 attr source Interarrivals
 attr title "InterArrivals, mean"
-scalar Carrefour.coda InterrivalStat:min 0.000115068479
+scalar Carrefour.coda InterrivalStat:min 4.5198065e-005
 attr source Interarrivals
 attr title "InterArrivals, min"
-scalar Carrefour.coda InterrivalStat:max 258.25985677933
+scalar Carrefour.coda InterrivalStat:max 326.68953555249
 attr source Interarrivals
 attr title "InterArrivals, max"
 

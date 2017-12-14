@@ -17,8 +17,7 @@
 
 Define_Module(Cassa);
 
-void Cassa::initialize()
-{
+void Cassa::initialize(){
     //Initializing the static parameters
 
     //Setting the identifier of the single Cassa
@@ -30,12 +29,20 @@ void Cassa::initialize()
     this->isWorking = false;
     //Initialize the own rng for the each till
     this->rng = new cMersenneTwister();
+    //Registering Signals
+    this->ActiveTillSignal = registerSignal("ActiveTill");
+    this->TotalTimeSignal = registerSignal("TotalTime");
 }
 
 void Cassa::handleMessage(cMessage *msg)
 {
     //If it's a selfMessage means that a service is completed
     if(msg->isSelfMessage()){
+        //Updating the time in the system
+        simtime_t arrive = ((Customer *) customers[0])->getArrivalTime();
+        emit(TotalTimeSignal,simTime() - arrive);
+        //Updating the active till
+        emit(ActiveTillSignal,this->numeroCassa);
         //remove the customer from the Cassa
         //Getting the Element in the first position to store the arrival time in a till
         simtime_t queueEnteringTime = ((Customer*) this->customers[0])->getArrivalTime();
