@@ -1,32 +1,23 @@
-file 1797940 1513244275                                         
+file 464 1513244890                                             
 version 2
-run General-0-20171214-10:37:49-1644
+run General-0-20171214-10:47:59-8156
 attr configname General
-attr datetime 20171214-10:37:49
+attr datetime 20171214-10:47:59
 attr experiment General
 attr inifile carrefour.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Carrefour
-attr processid 1644
+attr processid 8156
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-param **.lambda 111
-param **.numeroCasse 5
-param **.mu 200
+param **.lambda 31
+param **.numeroCasse 9
+param **.mu 180
 param **.tipoSimulazione 0
 
-vector 0 Carrefour.coda QueueLenghtStat:vector ETV
-attr source QueueLenght
-attr title "Queue Lenght, vector"
-vector 1 Carrefour.coda QueuingStat:vector ETV
-attr source Queuing
-attr title "Time in Queue, vector"
-0	680 1016811 1 48805 7 1772607.882142058784 32768 0 9 17920 21002
-0	1017491 182331 48805 57318 1772607.882142058784 2084523.189984171267 5718 0 6 3242 4234
-1	1199822 598116 1 57318 7 2084523.189984171267 18836 0 397.40834856803 51110.975048208 6348557.7609209
 
