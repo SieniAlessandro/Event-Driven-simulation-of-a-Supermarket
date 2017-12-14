@@ -35,7 +35,9 @@ class Coda : public cSimpleModule
     //Variable used for statistical purposes
     simsignal_t interarrivalSignal;
     simsignal_t queueingtimeSignal;
+    simsignal_t queuelenghtSignal;
     simtime_t time_prec;
+    int queuelenght;
 
 protected:
     virtual void initialize();

@@ -1,14 +1,14 @@
 version 2
-run General-0-20171214-10:18:47-2028
+run General-0-20171214-10:33:06-380
 attr configname General
-attr datetime 20171214-10:18:47
+attr datetime 20171214-10:33:06
 attr experiment General
 attr inifile carrefour.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Carrefour
-attr processid 2028
+attr processid 380
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -19,22 +19,31 @@ param **.numeroCasse 5
 param **.mu 200
 param **.tipoSimulazione 0
 
-scalar Carrefour.coda QueuingStat:mean 2.3290633562714
+scalar Carrefour.coda QueueLenghtStat:mean 0.52556304455039
+attr source QueueLenght
+attr title "Queue Lenght, mean"
+scalar Carrefour.coda QueueLenghtStat:min 0
+attr source QueueLenght
+attr title "Queue Lenght, min"
+scalar Carrefour.coda QueueLenghtStat:max 6
+attr source QueueLenght
+attr title "Queue Lenght, max"
+scalar Carrefour.coda QueuingStat:mean 2.8752780369018
 attr source Queuing
 attr title "Time in Queue, mean"
 scalar Carrefour.coda QueuingStat:min 0
 attr source Queuing
 attr title "Time in Queue, min"
-scalar Carrefour.coda QueuingStat:max 390.5550810843
+scalar Carrefour.coda QueuingStat:max 481.91920948058
 attr source Queuing
 attr title "Time in Queue, max"
-scalar Carrefour.coda InterrivalStat:mean 110.36568727042
+scalar Carrefour.coda InterrivalStat:mean 108.93201604944
 attr source Interarrivals
 attr title "InterArrivals, mean"
-scalar Carrefour.coda InterrivalStat:min 0.000303954069
+scalar Carrefour.coda InterrivalStat:min 0.000160130788
 attr source Interarrivals
 attr title "InterArrivals, min"
-scalar Carrefour.coda InterrivalStat:max 1323.5326203721
+scalar Carrefour.coda InterrivalStat:max 1028.1406484463
 attr source Interarrivals
 attr title "InterArrivals, max"
 

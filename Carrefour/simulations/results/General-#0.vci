@@ -1,15 +1,15 @@
-file 4082914 1513243135                                         
+file 1673245 1513243990                                         
 version 2
-run General-0-20171214-10:18:47-2028
+run General-0-20171214-10:33:06-380
 attr configname General
-attr datetime 20171214-10:18:47
+attr datetime 20171214-10:33:06
 attr experiment General
 attr inifile carrefour.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Carrefour
-attr processid 2028
+attr processid 380
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -23,11 +23,13 @@ param **.tipoSimulazione 0
 vector 0 Carrefour.coda InterrivalStat:vector ETV
 attr source Interarrivals
 attr title "InterArrivals, vector"
-vector 1 Carrefour.coda QueuingStat:vector ETV
+vector 1 Carrefour.coda QueueLenghtStat:vector ETV
+attr source QueueLenght
+attr title "Queue Lenght, vector"
+vector 2 Carrefour.coda QueuingStat:vector ETV
 attr source Queuing
 attr title "Time in Queue, vector"
-0	682 1483635 1 99494 7 3624349.805762664861 32768 0.006205805593 1319.4802236235 3624349.8057626 796630466.31407
-1	1484317 1047653 1 99494 7 3624349.805762664861 32768 0 390.5550810843 74247.532176286 9023479.6230001
-0	2531970 903406 99499 158373 3624594.876363688912 5752369.986221610852 19353 0.000303954069 1323.5326203721 2128020.180459 470501117.11122
-1	3435376 647536 99499 158373 3624594.876363688912 5752369.986221610852 19353 0 322.8248831219 47145.579015935 5167345.6764874
+0	792 542159 1 37030 7 1325266.907257451562 12166 0.000160130788 1028.1406484463 1325266.9072574 287321004.96259
+1	542951 748599 1 37030 7 1325266.907257451562 24332 0 6 12788 14122
+2	1291550 381693 1 37030 7 1325266.907257451562 12166 0 481.91920948058 34980.632596948 4615197.1844922
 

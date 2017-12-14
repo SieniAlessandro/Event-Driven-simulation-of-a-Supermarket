@@ -24,8 +24,10 @@ simple Coda
         int casse;
         @signal[Interarrivals](type = simtime_t);
         @signal[Queuing](type = simtime_t);
+        @signal[QueueLenght](type = int);
         @statistic[InterrivalStat](title="InterArrivals";source=Interarrivals;record=mean,vector,min,max); 
         @statistic[QueuingStat](title="Time in Queue";source=Queuing;record=mean,vector,min,max);
+        @statistic[QueueLenghtStat](title="Queue Lenght";source=QueueLenght;record=mean,vector,min,max); 
         
     gates : 
         input in[casse];

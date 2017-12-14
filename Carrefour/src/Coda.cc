@@ -18,9 +18,11 @@ void Coda::initialize()
     //Starting the simulation
     scheduleAt(simTime()+7,new cMessage());
     //Initilazing the signal
-    time_prec = 0;
+    this->time_prec = 0;
+    this->queuelenght = 0;
     this->interarrivalSignal = registerSignal("Interarrivals");
     this->queueingtimeSignal = registerSignal("Queuing");
+    this->queuelenghtSignal = registerSignal("QueueLenght");
 }
 
 //If self message then is arrived a new customer
@@ -28,8 +30,11 @@ void Coda::initialize()
 //send the customer
 void Coda::handleMessage(cMessage *msg) {
     if(msg->isSelfMessage()) {
+        //Updating the number of element in queue
+        this->queuelenght++;
         //Registering the Interarrival time of the customer
         emit(interarrivalSignal,simTime() - time_prec);
+        emit(queuelenghtSignal,this->queuelenght);
         //Updating the precedent time
         time_prec = simTime();
         //Inserting the new client at the end of the queue
@@ -41,8 +46,11 @@ void Coda::handleMessage(cMessage *msg) {
         //get the index of the till
         int indice = decisore->newCustomer();
         if(indice >= 0) {
-            simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
+            //Updating the number of element in queue
+            this->queuelenght--;
+            emit(queuelenghtSignal,this->queuelenght);
             //Registering the queuing time
+            simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
             emit(queueingtimeSignal,simTime()-queueTime);
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
