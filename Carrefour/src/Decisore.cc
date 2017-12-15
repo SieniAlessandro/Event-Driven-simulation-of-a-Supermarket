@@ -61,7 +61,7 @@ int Decisore::findlowest(){
         for(int i = 0; i < this->numerocasse;i++){
             //I'm stop when the first free till is reached, because we want the nearest till, and after that
             //position is returned to the caller
-            EV << "indice : " << i << " elementi :" << this->clientiAllaCassa[i] << endl;
+            //EV << "indice : " << i << " elementi :" << this->clientiAllaCassa[i] << endl;
             if(this->clientiAllaCassa[i] == 0)
                 return i;
         }
@@ -104,7 +104,7 @@ int Decisore::newCustomer(){
     //Debugging
     EV << "Posizione Assegnata: "<<position << endl;
     if(position > -1){
-        this->clientiAllaCassa[position]++;
+        //this->clientiAllaCassa[position]++;
     }
     else{
         //Debugging
@@ -150,5 +150,11 @@ bool Decisore::ServiceComplete(int i,simtime_t arrive){
             return false;
     }
     return false;
+}
+void Decisore::ArrivedCustomer(int position){
+    if(position >= 0 && position < this->numerocasse)
+        this->clientiAllaCassa[position]++;
+    else
+        EV << "This till is not present" << endl;
 }
 

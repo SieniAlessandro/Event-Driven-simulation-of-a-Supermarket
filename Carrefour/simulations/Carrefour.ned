@@ -23,12 +23,15 @@ network Carrefour
 {
     parameters:
         int numeroCasse;
-        double delay = 10.0; //Minimun delay for reach the nearest till, the delay grows linerly in proprtion 
+        double delay; //Minimun delay for reach the nearest till, the delay grows linerly in proprtion 
 							//to the distance (in our simulation the distance is rappresented by the position
 							//of a specific till in the array)
         double lambda;
         double mu;
         int tipoSimulazione;
+        int ServiceType; 	//This variable is used to indicate the distribution of the service demand
+        					//0 : exponential
+        					//1 : lognormal
     submodules:
         casse[numeroCasse]: Cassa {
             @display("p=88,44");

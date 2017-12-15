@@ -53,9 +53,11 @@ void Coda::handleMessage(cMessage *msg) {
             //Registering the queuing time
             simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
             emit(queueingtimeSignal,simTime()-queueTime);
+            //Getting the delay
+            double delay = getParentModule()->par("delay").doubleValue();
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
-            send(this->customers[0], this->gates[indice]);
+            sendDelayed(this->customers[0],(indice+1)*delay,this->gates[indice]);
             //Remove that costumers from the queue
             this->customers.erase(this->customers.begin());
         }

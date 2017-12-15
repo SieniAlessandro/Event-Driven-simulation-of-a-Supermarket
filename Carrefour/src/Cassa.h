@@ -22,7 +22,9 @@ private:
     std::vector<cMessage*> customers;
     //Random Number Generator
     cMersenneTwister *rng;
-
+    int ServiceType;    //This variable is used to indicate the distribution of the service demand
+                        //0 : exponential
+                        //1 : lognormal
  protected:
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);

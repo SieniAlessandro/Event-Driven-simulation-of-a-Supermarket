@@ -28,11 +28,12 @@ private:
    int findlowest();
    //Atribute used for statistical purposes
    simsignal_t TotalTimeSignal;
-    simsignal_t ActiveTillSignal;
+   simsignal_t ActiveTillSignal;
 public:
     Decisore();
     int newCustomer();
     bool ServiceComplete(int i,simtime_t);
+    void ArrivedCustomer(int );
     ~Decisore();
 protected:
     void initialize();

@@ -1,0 +1,69 @@
+version 2
+run General-0-20171215-08:53:15-9596
+attr configname General
+attr datetime 20171215-08:53:15
+attr experiment General
+attr inifile carrefour.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Carrefour
+attr processid 9596
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.lambda 101
+param **.numeroCasse 2
+param **.mu 180
+param **.tipoSimulazione 0
+param **.delay 150
+param **.ServiceType 0
+
+scalar Carrefour.coda E_Nq:mean 6345.814107152
+attr source QueueLenght
+attr title "E[Nq], mean"
+scalar Carrefour.coda E_Nq:min 0
+attr source QueueLenght
+attr title "E[Nq], min"
+scalar Carrefour.coda E_Nq:max 12643
+attr source QueueLenght
+attr title "E[Nq], max"
+scalar Carrefour.coda E_W:mean 643256.49275875
+attr source Queuing
+attr title "E[W], mean"
+scalar Carrefour.coda E_W:min 0
+attr source Queuing
+attr title "E[W], min"
+scalar Carrefour.coda E_W:max 1270731.6796395
+attr source Queuing
+attr title "E[W], max"
+scalar Carrefour.coda 1_MU:mean 101.48174153275
+attr source Interarrivals
+attr title "1/mu, mean"
+scalar Carrefour.coda 1_MU:min 0.000391610959
+attr source Interarrivals
+attr title "1/mu, min"
+scalar Carrefour.coda 1_MU:max 1114.9192562193
+attr source Interarrivals
+attr title "1/mu, max"
+scalar Carrefour.decisore ActiveTillStat:mean 0.47512046729808
+attr source ActiveTill
+attr title "Active Till, mean"
+scalar Carrefour.decisore ActiveTillStat:min 0
+attr source ActiveTill
+attr title "Active Till, min"
+scalar Carrefour.decisore ActiveTillStat:max 1
+attr source ActiveTill
+attr title "Active Till, max"
+scalar Carrefour.decisore E_R:mean 643869.29295238
+attr source TotalTime
+attr title "E[R], mean"
+scalar Carrefour.decisore E_R:min 152.15956086669
+attr source TotalTime
+attr title "E[R], min"
+scalar Carrefour.decisore E_R:max 1271102.0673397
+attr source TotalTime
+attr title "E[R], max"
+
