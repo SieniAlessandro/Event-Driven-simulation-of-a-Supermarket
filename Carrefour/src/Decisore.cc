@@ -104,7 +104,7 @@ int Decisore::newCustomer(){
     //Debugging
     EV << "Posizione Assegnata: "<<position << endl;
     if(position > -1){
-        //this->clientiAllaCassa[position]++;
+        this->clientiAllaCassa[position]++;
     }
     else{
         //Debugging
@@ -151,10 +151,3 @@ bool Decisore::ServiceComplete(int i,simtime_t arrive){
     }
     return false;
 }
-void Decisore::ArrivedCustomer(int position){
-    if(position >= 0 && position < this->numerocasse)
-        this->clientiAllaCassa[position]++;
-    else
-        EV << "This till is not present" << endl;
-}
-

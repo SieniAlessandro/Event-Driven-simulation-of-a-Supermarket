@@ -54,8 +54,6 @@ void Cassa::handleMessage(cMessage *msg)
     }else{//otherwise a new client arrives in the Cassa
         //Debugging
         EV << "Mi e' arrivato un customer"<< endl;
-        //Informing Decisore that a custome is arrived
-        decisore->ArrivedCustomer(this->numeroCassa);
         //Buffering the new client
         this->customers.push_back(msg);
 
