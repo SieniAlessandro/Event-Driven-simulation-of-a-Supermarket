@@ -39,7 +39,7 @@ Decisore::~Decisore() {
     //Deallocating the array of ties
     delete[] this->clientiAllaCassa;
 }
-//This function is used to find what tie has ties has the minimum number of people who are waiting
+//This function is used to find what tie has ties with the minimum number of people who are waiting
 //to be served. At the beginning we check the parameter who indicates the type of simulation we want to
 //execute: ties with a common queue (case 1) or ties with own queue (case 2)
 //Input parameter : parametro(int) - Is used to define which case we are simulating
