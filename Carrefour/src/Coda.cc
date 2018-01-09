@@ -62,6 +62,5 @@ void Coda::handleMessage(cMessage *msg) {
             this->customers.erase(this->customers.begin());
         }
     }
-
 }
 

@@ -34,3 +34,6 @@ private:
 int Cassa::numeroCasse = 0;
 
 #endif
+
+
+
