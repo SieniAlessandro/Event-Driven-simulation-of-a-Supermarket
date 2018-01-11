@@ -22,7 +22,7 @@ simple Decisore
 {
      parameters:
          @signal[TotalTime](type = simtime_t);
-         @signal[ActiveTill](type = int);
+         @signal[ActiveTill](type = long);
          @statistic[E_R](title="E[R]";source=TotalTime;record=mean,vector,min,max);
          @statistic[ActiveTillStat](title="Active Till";source=ActiveTill;record=mean,vector,min,max);
 }

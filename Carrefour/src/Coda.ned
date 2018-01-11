@@ -24,7 +24,7 @@ simple Coda
         int casse;
         @signal[Interarrivals](type = simtime_t);
         @signal[Queuing](type = simtime_t);
-        @signal[QueueLenght](type = int);
+        @signal[QueueLenght](type = long);
         @statistic[1_Lambda](title="1/lambda";source=Interarrivals;record=mean,vector,min,max); 
         @statistic[E_W](title="E[W]";source=Queuing;record=mean,vector,min,max);
         @statistic[E_Nq](title="E[Nq]";source=QueueLenght;record=mean,vector,min,max); 
