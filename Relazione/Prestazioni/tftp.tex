@@ -1,0 +1,26 @@
+\subsection{TFTP}
+\paragraph{} TFTP (Trivial File Transfer Protocol) è definito nella RFC 1350, ed è stato progettato per trasferire file utilizzando come protocollo di trasporto UDP (User Datagram Protocol). La porta sulla quale è in ascolto un TFTP server è la 69. TFTP viene solitamente usato per trasferire file tra un computer ed un altro dispositivo come router o switch in ambito LAN.
+
+\paragraph{} I dati trasmessi tramite TFTP sono rappresentati da pacchetti con una lunghezza fissa di 512 byte. Un pacchetto avente una dimensione inferiore rappresenta l'ultimo pacchetto trasmesso. I pacchetti dati inviati vengono memorizzati in un buffer fino alla ricezione della avvenuta accettazione da parte dell'host remoto. In caso di mancata conferma della ricezione entro un determinato tempo di un pacchetto, quest'ultimo viene ritrasmesso. 
+
+\paragraph{} I pacchetti utilizzati durante una sessione TFTP sono di cinque tipi: 
+\begin{itemize}
+	\item RR: Read Request (Richiesta di lettura); 
+	\item WR: Write Request (Richiesta di scrittura);
+	\item DATA: Dati;
+	\item ACK: Acknowledgment (Accettazione);
+	\item ERR: Errore.
+\end{itemize}
+
+\paragraph{} Le fasi di una sessione TFTP:  
+\begin{enumerate}
+	\item Il client contatta il server inviando una pacchetto di tipo RR (richiesta di lettura) o WR (richiesta di scrittura);  
+	\item Il server, se accetta la connessione, risponde inviando/ricevendo pacchetti DATA di 512 byte. Per ogni pacchetto inviato/ricevuto regolarmente viene inviato/ricevuto un ACK altrimenti un ERROR; 
+	\item I pacchetti vengono trasferiti finchè la loro lunghezza non è inferiore a 512 byte;  
+	\item Termine della connessione. 
+\end{enumerate}
+
+\paragraph{} Questo servizio permette di salvare le configurazioni degli switch e dei router e, viceversa, di caricare configurazioni dal server TFTP agli switch e ai router. E' buona norma chiamare il file salvato {\tt nomedispositivo-nomeutente-data} così da poter sapere in modo immediato chi ha apportato l'ultima modifica. 
+
+
+

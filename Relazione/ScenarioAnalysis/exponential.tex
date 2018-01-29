@@ -1,0 +1,24 @@
+\subsection{Exponential Scenario}
+\paragraph{} The first scenario analyzed is based on Exponential RVs, which has this PDF:
+\begin{centering}
+\begin{equation}
+f(x) = \begin{cases}
+ \lambda e^{-\lambda x} &  x\geq 0 \\ 
+ 0 & x<0 
+\end{cases}
+\end{equation}
+\end{centering}
+
+\paragraph{} and this CDF:
+
+\begin{centering}
+\begin{equation}
+F(x) = \begin{cases}
+ 1- \lambda e^{-\lambda x} &  x\geq 0 \\ 
+ 0 & x<0 
+\end{cases}
+\end{equation}
+\end{centering}
+\paragraph{} QUESTA ROBA SECONDO ME ERA STATA SCRITTA NEL PARAGRAFO PRECEDENTE Since in this simulation we want to study how the system works in different scenarios, we have used one seed for the arrival time of the customer and one seed for each till (a seed for each server). This choice guarantees us that the random variable present in our system are IID, because they are generated using different seed.
+The only fixed number present in our simulation is the time necessary for a customer to reach a till, because in a considerable amount of time, the position of the till in a supermarket are not changing.
+

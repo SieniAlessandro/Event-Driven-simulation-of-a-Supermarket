@@ -1,0 +1,18 @@
+\subsection{Autenticazione tramite IEEE 802.1x}
+\paragraph{} Un utente che vouole accedere ad una rete deve possedere delle credenziali di accesso (per esempio un account o un certifcato digitale) in modo che possa essere verifcata la sua identità; deve anche però poter stabilire in modo sicuro che il server o l'access point a cui si sta rivolgendo appartenga effettivamente ad una rete legittima, senza correre il rischio di fornire le proprie informazioni ad un utente non autorizzato. 
+Nella realizzazione della rete aziendale del Nuovo Blocco Operatorio verrà utilizzato il protocollo di autenticazione 802.1x, andando ad aggiornare con questo sistema più sicuro l'intera rete preesistente.
+\paragraph{IEEE 802.1x}
+È stato scelto l'utilizzo di questo protocollo poichè si basa sul controllo delle porte di accesso alla rete LAN e fornisce un meccanismo di autenticazione ai dispositivi che vogliono collegarsi tramite uno switch o un access point alla rete locale, stabilendo un collegamento point-to-point e impedendo collegamenti non autorizzati alla rete. Si può trovare una descrizione più dettagliata qui \cite{csc1} e nell'RFC 3580 \cite{rfc1}.
+Come si vede in figura \ref{fig:amb} l'IEEE 802.1x suddivide i componenti della rete in:
+\begin{itemize}
+    \item Supplicant: è il nuovo utente che sta cercando di connettersi alla rete.
+    \item Authenticator o Network Access Server (NAS): è lo switch o l'access point con il quale il supplicant comunica.
+    \item Authentication Server: è il server RADIUS - Remote Authentication Dial-in User Service che gestisce l'autenticazione.
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{ambiente8021x.png}
+  \caption{Ambiente di esecuzione del protocollo IEEE 802.1x}
+  \label{fig:amb}
+\end{figure}

@@ -1,0 +1,14 @@
+\subsection{Till}
+\paragraph{} This simulation's model represents the till. The customer does the bill and pays. This is included in service time. After this module the customer goes out of the system. 
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphics[width=80mm]{till.png}
+  \caption{Till.}
+  \label{fig:till}
+  \end{center}
+\end{figure}
+
+\paragraph{initialize} This function will initialize all the port gates of Coda, because it need as many output ports as the number of Casse in the simulation. Then the simulation will start.
+
+\paragraph{handleMessage} This function manages the queue: it checks if a new customer is arrived, if there is at least one customer in the queue and there is at least one available till, it sends the customer to the till.

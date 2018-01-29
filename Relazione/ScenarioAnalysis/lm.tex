@@ -1,0 +1,28 @@
+\subsubsection{Parameter analysis}
+\paragraph{} 
+In this scenario, the inter-arrival time is represented by $\lambda$ [s]; that stand for how many seconds elapse on average between one customer's arrival and another. To find out how many people arrive per second, it's necessary to compute the arrival's frequency $\frac{1}{\lambda} [\frac{1}{s}]$ (inter-arrival rate). The same is true for $\mu$ [s] (service time) that stand for how many seconds elapse, on average, between one customer's service and another and for $\frac{1}{\mu} [\frac{1}{s}]$ (service rate), the frequency of service as how many people are served per second. It's realistic think that a new customer arrives each, at least every 20 seconds, at most every 300 seconds and that a customer is served at least every 10 seconds, atmost every 240 seconds. We obtain $\lambda \in [20, 300]$ and $\mu \in [10, 240]$. \\
+\paragraph{} Moreover we need to respect the stability condition $\lambda < C\cdot \mu$ where C is the number of tills. This could be expected, since \lambda is the arrival and \mu is the service at high loads. In fact, the utilization is $\rho = \frac{\lambda }{C\cdot \mu}$ and the stability condition is $\rho < 1$  
+
+
+Puoi parlare del tempo di ritardo, indicandolo come valore fisso, che è direttamente proporzianale al numero di cassa, che nel nostro scenario indica anche la distanza della cassa dal "punto di partenza"
+ Oppure indicare come parametro il numero di casse, mostrando eventualmente, magari in base ad esperienze reali, quali sono i numeri di casse (C) maggiornamente rilevanti, ovvero quelli che hanno maggior probabilità di essere presneti in un supermercato
+ Per esempio : Noi abbiamo deciso di analizzare un sistema il cui numero di casse varia da 2 a 30, ben consci però che numeri molto elevati (es sopra il 10) sono difficilmente riscontrabili, e per tanto le nostre analisi si sono focalizzate maggiormente su questo sotto-intervallo
+ Stesso discorso lo puoi fare per lambda e mu
+ In generale secondo me è molto importante indicare i range selezionati ed i motivi che ci hanno portato fare quelle scelte, ed in particolare le motivazioni dietro ad analisi specifiche
+%During the process of fixing an adequate value for interarrival time and service time, an interesting behavior has been observed: while health regeneration
+%seemed not to beaffecting too much the utilization of the system, it caused the
+%system to get unstable when the utilization started growing above80% ; there-
+%fore we decided to perform a 2 k r factorial analysis to verify the actual impact
+%of the parameters on utilization:
+%as we can see, the highest effect is given by service rate(insert percentage), fol-
+%lowed by minionIAT(percentage), bossIAT(percentage) and least from health
+%regen(percentage).This is what we expected, since the definition of utilization
+%in case of two different job queues (ignoring, for sake of simplicity, health regen-
+%eration)is:
+%ρ = (λ 1 + λ 2 )/µ
+%and this means that the contribution in the nominator is somehow divided
+%between the two generators.Concerning the instability caused by health regen-
+%eration, it is explainable by the fact that decreasing the mean value for the boss
+%intersend time increases the probability that a boss arrives “too early”, causing
+%preemption in a busysystem that has to handle the new boss and the previous,
+%still not handled and “reinforced”by health regeneration workload.

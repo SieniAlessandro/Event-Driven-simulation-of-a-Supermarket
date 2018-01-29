@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{REQUISITI}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Requisiti strutturali}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Requisiti giuridici}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Requisiti di sicurezza}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Requisiti di robustezza}{section.1}% 5
+\BOOKMARK [1][-]{section.2}{ORGANIZZAZIONE DELLA RETE}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Propriet\340}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.2}{Rete gerarchica}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Il complesso ospedaliero}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.4}{Cablaggio strutturato}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.5}{Il Nuovo Blocco Operatorio}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.6}{Armadi Rack}{section.2}% 12
+\BOOKMARK [1][-]{section.3}{SICUREZZA}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Autenticazione tramite IEEE 802.1x}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.2}{EAP}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.3}{Server RADIUS e AAA}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.4}{Metodo di autenticazione}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Autenticazione tramite credenziali}{subsection.3.4}% 18
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Autenticazione tramite MAC address}{subsection.3.4}% 19
+\BOOKMARK [2][-]{subsection.3.5}{Implementazione finale}{section.3}% 20
+\BOOKMARK [1][-]{section.4}{SERVER}{}% 21
+\BOOKMARK [1][-]{section.5}{STP}{}% 22
+\BOOKMARK [1][-]{section.6}{CONCLUSIONI}{}% 23
+\BOOKMARK [1][-]{section*.52}{Appendices}{}% 24
+\BOOKMARK [1][-]{Appendix.a.A}{Decreto Legislativo n 259 del 1 agosto 2003 detto "Codice delle comunicazioni elettroniche"}{}% 25
+\BOOKMARK [1][-]{Appendix.a.B}{Configurazione degli switch}{}% 26
+\BOOKMARK [2][-]{subsection.a.B.1}{Show running-config}{Appendix.a.B}% 27
+\BOOKMARK [2][-]{subsection.a.B.2}{IOS Command Line Interface}{Appendix.a.B}% 28
+\BOOKMARK [1][-]{Appendix.a.C}{Planimetrie}{}% 29

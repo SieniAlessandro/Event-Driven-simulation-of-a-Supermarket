@@ -1,0 +1,35 @@
+\subsection{Cablaggio strutturato}
+
+\paragraph{Livello fisico}
+Il livello fisico ha il compito di trasmettere un flusso di dati, bits, attraverso un collegamento fisico. Deve definire le modalità di invio dei singoli bits. 
+Questo è l'unico livello che riguarda direttamente l'hardware, infatti è qui che vengono definite le caratteristiche dei cavi ed il loro persorso (cablaggio). Viene inoltre decisa la tipologia di trasmissione dei segnali (rame, fibra, etc) e l'eventuale trasmissione simultanea (half duplex ovvero full duplex).
+
+\paragraph{Cavi}
+Il cablaggio strutturato viene fatto nelle aziende dove si ha la necessità di collegare i PC a server e periferiche e di fornire collegamenti per ogni tipo di dispositivo elettronico, nel nostro caso dispositivi medicali e apparecchiature mediche.
+Per il cablaggio strutturato su più piani consideriamo le categorie di cavi utilizzabili:
+\begin{itemize}
+    \item Cavi di categoria 5e (5 enhanced): supportano trasmissioni fino a 1 Gibabit per distanze minori di 100m e frequenza massima 250MHz.
+    \item Cavi di categoria 6: supportano trasmissioni costanti alla velocità di 5 Gigabit per distanze minori di 100m e frequenza massima 500 MHz.
+    \item Cavi di categoria 7: cavi con doppia schermatura, supportano trasmissioni alla velocità di 10 Gigabit Ethernet per distanze minori di 100m e frequenza massima 600 MHz. 
+    \item Cavi di categoria 7A: per frequenze fino a 1000MHz, supporteranno in futuro una ethernet a 40Gigabit 40Gbase-T entro 50m e una 100Gigabit ethernet a 15 metri. 
+\end{itemize}
+
+Il cablaggio può essere fatto in rame con cavi di tipo:
+\begin{itemize}
+  \item Cavo UTP (Unshielded Twisted Pair, "doppino non schermato"): flessibile e senza schermatura, è composto dalla guaina di plastica protettiva, i quattro doppini e i connettori RJ45.
+  \item Cavo FTP (Foiled Twisted Pair, "doppino avvolto"): con schermatura singola, racchiude i quattro doppini e scherma parzialmente da interferenze elettromagnetiche. 
+  \item Cavo STP (Shielded Twisted Pair, "doppino schermato"): con doppia schermatura, la guaina schermante è presente sia attorno ad ogni singolo doppino sia attorno alle quattro coppie, come nel caso precedente. Scherma da ogni interferenza ma a discapito della flessibilità del cavo.
+\end{itemize}
+
+\paragraph {Cablaggio verticale}
+Il cablaggio verticale collega gli armadi MDF (Main Distribution Frame) a:
+\begin{itemize}
+  \item agli armadi IDF (Intermediate Distribution Frame) e quindi gli switch di core agli switch di distribution e access. 
+  \item al core della rete situato nell'edificio principale.
+\end{itemize}
+Il cablaggio verticale è realizzato in fibra con quattro cavi multimodali WS-G5484 dal core switch dell'ospedale principale al core switch del nuovo blocco operatorio; è in fibra il collegamento tra gli switch di core e gli switch di distribution; è in fibra il collegamento tra gli switch di distribution e gli switch di access. 
+
+\paragraph{Cablaggio orizzontale}
+Il cablaggio orizzontale collega gli swith di access al patch panel e collega i patch panel agli endpoint.  Questi collegamenti sono realizzati con i cavi di categoria 7 S/FTP con connettori GG45 (GigaGate 45, retrocompatibili con i classici connettori RJ45). I cavi cat7, con la loro velocità massima di 10Gigabit guardano al futuro e alla longevità dell'edificio, prevedendo un cablaggio strutturato valido per i prossimi venti anni ed oltre.
+I collegamenti tra le torrette di endpoint e le postazioni di lavoro sono fatti con cavi di categoria 6.
+\paragraph{} Nell'appendice \ref{appendix:planimetrie} sono mostrate le planimetrie del Nuovo Blocco Operatorio, che prenderemo come punto di riferimento per studiare la disposizione degli armadi di rete (MDF e IDF).
