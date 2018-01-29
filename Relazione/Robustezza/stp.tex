@@ -1,0 +1,26 @@
+\subsection{STP}
+\paragraph{} Il protocollo Spanning Tree, definito nello standard IEEE 802.1D, assicura una topologia di rete priva di loop, lasciando attivo un solo percorso tra due nodi. L'algoritmo dello Spanning Tree opera in modo distribuito su tutti i bridge permettendo che questi siano collegati tra loro tramite un albero di copertura. Per prima cosa l'algoritmo deve trovare una radice (root) che è individuata dal nodo con l'ID più basso; viene poi calcolato, per ogni nodo, il percorso con il costo minimo verso la radice; infine la porta del nodo collegata alla radice e che ha il persorso minimo verso di essa, viene chiamata root port. Ogni altra porta attiva, che non è una root port, viene chiamata blocked port e viene quindi disabilitata per impedire loop all'interno della rete. Il costo di un collegamento è dato dal tipo dello stesso,
+collegamenti più lenti avranno costo più alto, mentre collegamenti più veloci avranno ovviamente un costo minore.
+Ogni porta di uno switch in cui è implementato l’STP può avere uno stato diverso:
+\begin{itemize}
+	\item \textbf{Blocking}: è una porta che potrebbe causare un loop, è pertanto bloccato ogni dato in ricezione o invio. L’unico tipo di dato accettato è il Bridge Protocol Data Units (BPDU) necessario per la comunicazione di dati riguardo lo stato dello Spanning Tree.
+	\item \textbf{Listening}: lo switch processa BPDU e aspetta possibili informazioni che potrebbero indurre lo stato di blocking, non popola la tabella dei MAC Address e non invia frames.
+	\item \textbf{Learning}: finchè la porta non invia frames, impara l’indirizzo del mittente dai frames ricevuti, e inizia così a popolare la tabella degli indirizzi MAC.
+	\item \textbf{Fowarding}: la porta invia e ricevi dati, è in condizioni normali. Il protocollo monitora i BPDU in arrivo per l’evenutuale cambio di stato della porta a blocking.
+	\item \textbf{Disabled}: la porta non fa parte dello Spanning Tree, operazione permessa all’amministratore di rete.
+\end{itemize}
+\paragraph{} Nella rete aziendale gli switch di core sono manualmente impostati come nodi root, tramite il comando \textsf{\#spanning-tree vlan id root primary} \\
+Utilizzando il protocollo PVST (Per VLAN Spanning Tree) si crea un albero di copertura per ogni VLAN, questo fa si che ogni link sia utilizzato ed il carico di dati venga distribuito su tutti i link.
+\subsubsection{Configurazione STP negli switch}
+\paragraph{} Nel modo di configurazione globale:
+\begin{lstlisting}
+spanning-tree mode pvst
+spanning-tree extend system-id
+\end{lstlisting}
+La prima istruzione imposta la modalità PVST (Per-VLAN Spanning Tree), che fa in modo di mantenere un’istanza di STP per ogni VLAN configurata nella rete. Questo consente di trattare ogni VLAN come una rete separata, e permette un migliore bilanciamento del carico. \\
+La seconda istruzione permette di estendere gli ID delle VLAN tra 1025 e 4096.  
+\paragraph{} Nelle interfacce dello switch, può esere necessario aggiungere:
+\begin{lstlisting}
+spanning-tree portfast
+\end{lstlisting}
+Questo comando serve per impostare una porta direttamente sullo stato di forwarding, saltando gli stati di listening e learning.  

@@ -1,0 +1,16 @@
+\subsection{A priori assumption}
+\paragraph{} 
+The assumption made to have a good model to study the behavior of the system is the following:
+\begin{enumerate}
+	\item The system has ideal  delay = 0 s among all the network nodes and in case a) a fixed delay equal to $\Delta \cdot j$
+	\item Queue hasn't a maximum size, all customers that enter the system will be served
+	\item The system at simTime zero is empty
+	\item Distributions of inter-arrival time (IAT) and service time (ST) are independent from the workload
+	\item The pseudo-random numbers generated in the simulation by Omnet can be considered IID
+\end{enumerate}
+In order to model the system is  under the hypothesis of continuous-time Markov Chains \[M/M/C/\infty/\infty\] where:
+\begin{enumerate}
+	\item C is finite because the number of tills can variate, but stay constant in a single simulation
+	\item The queue is infinite because the tills can serve all the people.
+	\item The population is infinite because before the simulation we don’t know how many people will arrive at each till.
+\end{enumerate}
