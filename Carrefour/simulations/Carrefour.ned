@@ -26,8 +26,10 @@ network Carrefour
         double delay; //Minimun delay for reach the nearest till, the delay grows linerly in proprtion 
 							//to the distance (in our simulation the distance is rappresented by the position
 							//of a specific till in the array)
-        double lambda;
-        double mu;
+        double lambda;	//For the exponential distribuition (inter-arrival time)
+        double mu;		//For the exponential distribuition (Service demands)
+        double meanLogNormal; //Parameters for the lognormal distribuition (service demands)
+        double varianceLogNormal;
         int tipoSimulazione;
         int ServiceType; 	//This variable is used to indicate the distribution of the service demand
         					//0 : exponential
