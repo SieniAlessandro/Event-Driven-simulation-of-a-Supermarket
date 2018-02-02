@@ -1,0 +1,45 @@
+file 234833 1517593910                                          
+version 2
+run General-7-20180202-18:51:50-9252
+attr configname General
+attr datetime 20180202-18:51:50
+attr experiment General
+attr inifile carrefour.ini
+attr iterationvars $0=30
+attr iterationvarsf 30-
+attr measurement $0=30
+attr network Carrefour
+attr processid 9252
+attr repetition 1
+attr replication #1
+attr resultdir results
+attr runnumber 7
+attr seedset 7
+param **.lambda 30
+param **.numeroCasse 10
+param **.mu 30
+param **.tipoSimulazione 0
+param **.delay 0
+param **.ServiceType 0
+
+vector 0 Carrefour.coda 1_Lambda:vector ETV
+attr source Interarrivals
+attr title "1/lambda, vector"
+vector 1 Carrefour.coda E_Nq:vector ETV
+attr source QueueLenght
+attr title "E[Nq], vector"
+vector 2 Carrefour.coda E_W:vector ETV
+attr source Queuing
+attr title "E[W], vector"
+vector 3 Carrefour.decisore E_R:vector ETV
+attr source TotalTime
+attr title "E[R], vector"
+vector 4 Carrefour.decisore ActiveTillStat:vector ETV
+attr source ActiveTill
+attr title "Active Till, vector"
+0	1003 58102 1 4144 7 43193.014810302257 1383 0.028452020885 265.43546622521 43193.014810302 2755989.1906946
+1	59105 39268 1 4144 7 43193.014810302257 1383 0 0 0 0
+2	98373 39268 1 4144 7 43193.014810302257 1383 0 0 0 0
+3	137641 57992 3 4147 11.982461025356 43194.596388993236 1381 0.01107861164 212.08657425901 40368.600492875 2361851.3870187
+4	195633 39198 3 4147 11.982461025356 43194.596388993236 1381 0 6 1037 2075
+

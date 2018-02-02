@@ -24,7 +24,7 @@ void Coda::initialize()
     this->queueingtimeSignal = registerSignal("Queuing");
     this->queuelenghtSignal = registerSignal("QueueLenght");
 }
-
+//prova
 //If self message then is arrived a new customer
 //else if there is at least one customer in the queue and there is at least one available till
 //send the customer
