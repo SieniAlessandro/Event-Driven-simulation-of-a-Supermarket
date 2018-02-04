@@ -1,25 +1,27 @@
 version 2
-run General-5-20180202-18:51:49-11116
+run General-0-20180204-17:50:46-4636
 attr configname General
-attr datetime 20180202-18:51:49
+attr datetime 20180204-17:50:46
 attr experiment General
 attr inifile carrefour.ini
-attr iterationvars $0=10
-attr iterationvarsf 10-
-attr measurement $0=10
+attr iterationvars $0=150
+attr iterationvarsf 150-
+attr measurement $0=150
 attr network Carrefour
-attr processid 11116
-attr repetition 1
-attr replication #1
+attr processid 4636
+attr repetition 0
+attr replication #0
 attr resultdir results
-attr runnumber 5
-attr seedset 5
-param **.lambda 10
-param **.numeroCasse 10
+attr runnumber 0
+attr seedset 0
+param **.lambda 150
+param **.numeroCasse 2
 param **.mu 30
 param **.tipoSimulazione 0
-param **.delay 0
-param **.ServiceType 0
+param **.delay 3
+param **.ServiceType 1
+param **.varianceLogNormal 0.25
+param **.meanLogNormal 30
 
 scalar Carrefour.coda E_Nq:mean 0
 attr source QueueLenght
@@ -30,40 +32,40 @@ attr title "E[Nq], min"
 scalar Carrefour.coda E_Nq:max 0
 attr source QueueLenght
 attr title "E[Nq], max"
-scalar Carrefour.coda E_W:mean 0
+scalar Carrefour.coda E_W:mean 0.15221831977809
 attr source Queuing
 attr title "E[W], mean"
 scalar Carrefour.coda E_W:min 0
 attr source Queuing
 attr title "E[W], min"
-scalar Carrefour.coda E_W:max 0
+scalar Carrefour.coda E_W:max 17.823857690913
 attr source Queuing
 attr title "E[W], max"
-scalar Carrefour.coda 1_Lambda:mean 9.9685126770036
+scalar Carrefour.coda 1_Lambda:mean 152.05302570771
 attr source Interarrivals
 attr title "1/lambda, mean"
-scalar Carrefour.coda 1_Lambda:min 0.000643622819
+scalar Carrefour.coda 1_Lambda:min 2.188941195949
 attr source Interarrivals
 attr title "1/lambda, min"
-scalar Carrefour.coda 1_Lambda:max 92.943776425018
+scalar Carrefour.coda 1_Lambda:max 1110.7774979774
 attr source Interarrivals
 attr title "1/lambda, max"
-scalar Carrefour.decisore ActiveTillStat:mean 2.0154698683907
+scalar Carrefour.decisore ActiveTillStat:mean 0.16312056737589
 attr source ActiveTill
 attr title "Active Till, mean"
 scalar Carrefour.decisore ActiveTillStat:min 0
 attr source ActiveTill
 attr title "Active Till, min"
-scalar Carrefour.decisore ActiveTillStat:max 9
+scalar Carrefour.decisore ActiveTillStat:max 1
 attr source ActiveTill
 attr title "Active Till, max"
-scalar Carrefour.decisore E_R:mean 30.451749373229
+scalar Carrefour.decisore E_R:mean 33.607301444205
 attr source TotalTime
 attr title "E[R], mean"
-scalar Carrefour.decisore E_R:min 0.001924022796
+scalar Carrefour.decisore E_R:min 31.365532197317
 attr source TotalTime
 attr title "E[R], min"
-scalar Carrefour.decisore E_R:max 266.46511066259
+scalar Carrefour.decisore E_R:max 50.702847109471
 attr source TotalTime
 attr title "E[R], max"
 
