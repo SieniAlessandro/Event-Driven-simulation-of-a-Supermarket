@@ -28,6 +28,8 @@ network Carrefour
 							//of a specific till in the array)
         double lambda;
         double mu;
+        double varianceLogNormal;
+        double meanLogNormal;
         int tipoSimulazione;
         int ServiceType; 	//This variable is used to indicate the distribution of the service demand
         					//0 : exponential

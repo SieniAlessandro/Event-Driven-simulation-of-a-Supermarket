@@ -65,9 +65,13 @@ void Cassa::handleMessage(cMessage *msg)
         //in this case is used an exponential variable ----> in the future we'll need the lognormal case
         if(this->ServiceType == 0)
             scheduleAt(simTime()+omnetpp::exponential(this->rng, getParentModule()->par("mu").longValue()), new cMessage());
-        else
-            scheduleAt(simTime()+omnetpp::lognormal(this->rng, getParentModule()->par("mu").longValue(),10), new cMessage());
-        //at this point the Cassa isn't idle anymore
+        else{
+            double meanLog = getParentModule()->par("meanLogNormal");
+            double varianceLog = getParentModule()->par("varianceLogNormal");
+            double mean = 2 * log(meanLog) - log(varianceLog + meanLog*meanLog)/2;
+            double variance = log(varianceLog + meanLog*meanLog) - 2*log(meanLog);
+            scheduleAt(simTime()+omnetpp::lognormal(this->rng, mean, sqrt(variance)), new cMessage());
+        }        //at this point the Cassa isn't idle anymore
         this->isWorking = true;
     }
 }
