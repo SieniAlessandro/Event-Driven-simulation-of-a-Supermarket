@@ -53,8 +53,9 @@ void Coda::handleMessage(cMessage *msg) {
             //Registering the queuing time
             simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
             emit(queueingtimeSignal,simTime()-queueTime);
-            //Getting the delay
-            double delay = getParentModule()->par("delay").doubleValue();
+            int tipoSimulazione = (int(getParentModule()->par("tipoSimulazione")) == 0) ? 1 : 0;
+            //Getting the delay if the simulation is with single queue tipoSimulazione is 1 we won't a delay
+            double delay = getParentModule()->par("delay").doubleValue() * tipoSimulazione;
             //Send the customers, with a FIFO policy, to the Cassa
             //specified by the Decisore
             sendDelayed(this->customers[0],(indice+1)*delay,this->gates[indice]);

@@ -22,8 +22,10 @@ private:
     std::vector<cMessage*> customers;
     //Random Number Generator
     cMersenneTwister *rng;
-    int ServiceType;    //This variable is used to indicate the distribution of the service demand
-                        //0 : exponential
+    //Variable used for statistical purpose
+    simsignal_t queueingtimeSignal;
+    //This variable is used to indicate the distribution of the service demand
+    int ServiceType;    //0 : exponential
                         //1 : lognormal
  protected:
     virtual void initialize();

@@ -20,7 +20,9 @@ package carrefour;
 //
 simple Cassa
 {
-   
+   parameters:
+        @signal[MultipleQueuing](type = simtime_t);
+		@statistic[E_W_MQ](title="E[W_MQ]";source=MultipleQueuing;record=mean,vector,min,max);
     gates:
         input in;
         output out;

@@ -31,7 +31,7 @@ void Cassa::initialize(){
     this->rng = new cMersenneTwister();
     //Obtaining the type of the service distribuition
     this->ServiceType = getParentModule()->par("ServiceType").longValue();
-
+    this->queueingtimeSignal = registerSignal("MultipleQueuing");
 }
 
 void Cassa::handleMessage(cMessage *msg)
@@ -41,7 +41,13 @@ void Cassa::handleMessage(cMessage *msg)
         //Updating the time in the system
         //Getting the Element in the first position to store the arrival time in a till
         simtime_t queueEnteringTime = ((Customer*) this->customers[0])->getArrivalTime();
+        //The first customer in the queue is been served
         this->customers.erase(this->customers.begin());
+        if(this->customers.size() > 0){
+        //Take the statistics of the queueing time of the next customer that is gonna be served
+            simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
+            emit(queueingtimeSignal,simTime()-queueTime);
+        }
         EV << "Tempo di attesa in coda: "<< simTime().dbl() - queueEnteringTime.dbl() << endl;
         //Inform the Decisore that one of its customer leaves
         if(decisore->ServiceComplete(this->numeroCassa,queueEnteringTime)){
@@ -56,7 +62,10 @@ void Cassa::handleMessage(cMessage *msg)
         EV << "Mi e' arrivato un customer"<< endl;
         //Buffering the new client
         this->customers.push_back(msg);
-
+        if(this->customers.size() == 1){//Necessary to get the statistics when the queue is empty
+            simtime_t queueTime = ((Customer*) this->customers[0])->getArrivalTime();
+            emit(queueingtimeSignal,simTime()-queueTime);
+        }
     }
     //If there's at least one customer and the Cassa isn't in the idle state
     if(this->customers.size() > 0 && !this->isWorking){
