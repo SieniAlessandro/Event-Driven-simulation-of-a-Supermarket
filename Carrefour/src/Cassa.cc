@@ -34,6 +34,9 @@ void Cassa::initialize(){
     this->queueingtimeSignal = registerSignal("MultipleQueuing");
 }
 
+//This function handle the arrival of a customer to that specific till:
+//At first put it in its queue, after if the customer is the first of its queue
+//the till will serve it, else it waits until it will be the first of the queue
 void Cassa::handleMessage(cMessage *msg)
 {
     //If it's a selfMessage means that a service is completed
