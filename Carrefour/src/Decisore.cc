@@ -95,16 +95,16 @@ int Decisore::findlowest(){
 //because we want to simulate the time reach the till, and only after that time is elapsed our new customer
 //is added to the queue
 //Input parameter : parameter(int) - Is used to define which case we are simulating
-//Output          : int            - In this implementation the function return the position of the till
+//Output          : int            - In this implementation the function return the index of the till
 int Decisore::newCustomer(){
     //Debugging
     EV << "Chiamato il decisore" << endl;
     //Finding the right till
-    int position = this->findlowest();
+    int index = this->findlowest();
     //Debugging
-    EV << "Posizione Assegnata: "<<position << endl;
-    if(position > -1){
-        this->clientiAllaCassa[position]++;
+    EV << "Cassa Assegnata: "<< index << endl;
+    if(index > -1){
+        this->clientiAllaCassa[index]++;
     }
     else{
         //Debugging
@@ -113,7 +113,7 @@ int Decisore::newCustomer(){
         //Debugging
         EV << "Clienti in Attesa : " << this->inAttesa << endl;
     }
-    return position;
+    return index;
 }
 //This method is used by the till to indicate that it has finished to service one customer, and in particular is usefull
 //in case of a common queue, because the till are work-conserving, i.e. the must serve all customers in queue without going
